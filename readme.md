@@ -28,15 +28,11 @@ Need help? Check out Stenciljs docs [here](https://stenciljs.com/docs/my-first-c
 
 ###	Styling
 
-The core branding is ready to use in the project.
+Check out the documentation and how to use the core branding [here](https://a-ui.github.io/core_branding_scss/). 
 
-> Check out the documentation and how to use the core branding [here](https://a-ui.github.io/core_branding_scss/). 
+Check out the documentation and how to use flexboxgrid [here](http://flexboxgrid.com/).
 
-Flexboxgrid is ready to use in the project.
-
-> Check out the documentation and how to use flexboxgrid [here](http://flexboxgrid.com/).
-
-Note that you are free to use your own grid, as long as it meets our branding guidelines.
+> Note that you are free to use your own grid, as long as it meets our branding guidelines.
 
 ## Storybook
 
