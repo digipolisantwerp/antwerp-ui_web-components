@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/acpaas-web-components.esm.js"></script>
+  <script nomodule src="/build/acpaas-web-components.js"></script>
+
+  <style>
+	.content {
+		width: 50%;
+		margin: 0 auto;
+	}
+	h1, .content-text {
+		margin: 24px 0 !important;
+	}
+	h5 {
+		margin: 24px 0 12px 0 !important;
+	}
+  </style>
+
+</head>
+<body style="margin:0;">
+	<cookie-consent></cookie-consent>
+
+	<div class="content">
+		<h5>Youtube filmpje met icoon:</h5>
+		<cookie-content-blocker type="youtube" icon="true"></cookie-content-blocker>
+		<h5>Facebook post met icoon:</h5>
+		<cookie-content-blocker type="facebook" icon="true"></cookie-content-blocker>
+		<h5>Tweet met icoon:</h5>
+		<cookie-content-blocker type="twitter" icon="true"></cookie-content-blocker>
+		<h5>Instagram post met icoon:</h5>
+		<cookie-content-blocker type="instagram" icon="true"></cookie-content-blocker>
+		<h5>Youtube zonder icoon:</h5>
+		<cookie-content-blocker type="youtube" icon="false"></cookie-content-blocker>
+	</div>
+
+</body>
+</html>

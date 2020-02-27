@@ -1,0 +1,18 @@
+@import url("https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css");
+@import '~@a-ui/core/dist/main.css';
+
+:host {
+  display: block;
+  width: 100%;
+}
+.hidden {
+	display: none;
+}
+.content-blocker {
+	background-color: #F3F3F3;
+	border: 1px solid #949494;
+	padding: 1rem 1.5rem;
+	.fa {
+		font-size: 40px;
+	}
+}
