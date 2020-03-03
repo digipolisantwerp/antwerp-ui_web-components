@@ -145,9 +145,9 @@ export class CookieConsent {
 		return (
 			<div>
 				<div class="m-modal__body">
-					<div class="row u-margin-bottom">
+					<div class={classNames('row', { 'u-margin-bottom': isMobile})}>
 						<div class="col-xs-12 col-md-8">
-							<h1 class='h3 u-margin-bottom u-margin-right'>Soorten Cookies</h1>
+							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
 							<a href="#" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</a>
@@ -155,7 +155,7 @@ export class CookieConsent {
 					</div>
 					{this.showCategories()}
 				</div>
-				<div class={"m-modal__footer" + (isMobile && " u-margin-top-lg")}>
+				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
 					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
 				</div>
 			</div>
