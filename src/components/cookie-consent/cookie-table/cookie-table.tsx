@@ -31,7 +31,6 @@ export class CookieTable {
 
 	render() {
 		return (
-			<div class="">
 			<table class="a-table a-table--primary u-margin-bottom-xs">
 				<thead>
 					<tr>
@@ -45,7 +44,6 @@ export class CookieTable {
 					{this.loadCookieTableBody(this.data)}
 				</tbody>
 			</table>
-			</div>
 		);
 	}
 }
