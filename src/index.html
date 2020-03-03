@@ -10,8 +10,12 @@
 
   <style>
 	.content {
-		width: 50%;
 		margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+	}
+	.component {
+		margin: auto;
 	}
 	h1, .content-text {
 		margin: 24px 0 !important;
@@ -26,16 +30,42 @@
 	<cookie-consent></cookie-consent>
 
 	<div class="content">
-		<h5>Youtube filmpje met icoon:</h5>
-		<cookie-content-blocker type="youtube" icon="true"></cookie-content-blocker>
-		<h5>Facebook post met icoon:</h5>
-		<cookie-content-blocker type="facebook" icon="true"></cookie-content-blocker>
-		<h5>Tweet met icoon:</h5>
-		<cookie-content-blocker type="twitter" icon="true"></cookie-content-blocker>
-		<h5>Instagram post met icoon:</h5>
-		<cookie-content-blocker type="instagram" icon="true"></cookie-content-blocker>
-		<h5>Youtube zonder icoon:</h5>
-		<cookie-content-blocker type="youtube" icon="false"></cookie-content-blocker>
+			<div classs="row">
+				<div class="col-xs-12 col-md-8 component">
+					<h5>Youtube filmpje met icoon:</h5>
+					<cookie-content-blocker type="youtube" icon="true"></cookie-content-blocker>
+				</div>
+			</div>
+	
+			<div classs="row">
+				<div class="col-xs-12 col-md-8 component">
+					<h5>Facebook post met icoon:</h5>
+					<cookie-content-blocker type="facebook" icon="true"></cookie-content-blocker>
+				</div>
+			</div>
+	
+			<div classs="row">
+				<div class="col-xs-12 col-md-8 component">
+					<h5>Tweet met icoon:</h5>
+					<cookie-content-blocker type="twitter" icon="true"></cookie-content-blocker>
+				</div>
+			</div>
+	
+			<div classs="row">
+				<div class="col-xs-12 col-md-8 component">
+					<h5>Instagram post met icoon:</h5>
+					<cookie-content-blocker type="instagram" icon="true"></cookie-content-blocker>
+				</div>
+			</div>
+	
+	
+			<div classs="row">
+				<div class="col-xs-12 col-md-8 component">
+					<h5>Youtube zonder icoon:</h5>
+					<cookie-content-blocker type="youtube" icon="false"></cookie-content-blocker>
+				</div>
+			</div>
+
 	</div>
 
 </body>

@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+import { isMobile } from 'react-device-detect';
 
 @Component({
 	tag: 'cookie-category',
@@ -14,14 +15,15 @@ export class CookieCategory {
 			<div class="category-item">
 				<div class="category-item-nav u-margin-bottom-xs" onClick={() => this.onOpenCloseCategory(this.index)}>
 					<div class="row">
-						<div class="col-xs-8 category-item-name">
+						<div class="col-xs-6 category-item-name">
 							<h2 class="h6"><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
 						</div>
-						<div class="col-xs-4 u-text-right">
+						<div class="col-xs-6 u-text-right">
 							<div class="a-input">
-								<div class={item.showSwitch ? "a-switch" : ""}>
+								<div class={item.showSwitch && "a-switch"}>
 									<label class="a-switch__label">
-										{(item.showSwitch ? ((item.enabled ? "In" : "Uit") + "geschakeld") : "Altijd ingeschakeld")}
+										{((item.showSwitch && !isMobile) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
+										{(!item.showSwitch && "Altijd ingeschakeld")}
 									</label>
 									{item.showSwitch &&
 										<div class="a-switch__toggle">
