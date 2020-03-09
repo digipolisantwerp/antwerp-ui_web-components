@@ -1,6 +1,31 @@
 @import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css');
 @import '~@a-ui/core/dist/main.css';
 
+.mobile {
+	.m-overlay__inner {
+		min-height: calc(100vh);
+	}
+
+	table {
+			table-layout: fixed;
+
+			th:nth-of-type(4) {
+				width: 40%;
+			}
+
+			td {
+				word-break: break-all;
+			}
+	}
+
+}
+
+.accept-all-cookies-wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
 .accepted {
 	display: none;
 }
@@ -19,7 +44,8 @@
 			line-height: 1.5;
 			.fa {
 				font-size: 1.5rem;
-    			padding-right: 18px;
+				padding-right: 18px;
+				display: inline;
 			}
 		}
 	}

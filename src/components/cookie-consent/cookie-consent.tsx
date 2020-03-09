@@ -1,6 +1,10 @@
 import { Component, Prop, Host, State, Watch, h } from '@stencil/core';
-import { ConfigInterface } from './cookie-consent.interface';
 import Cookies from 'js-cookie';
+import { isMobile } from 'react-device-detect';
+import classNames from 'classnames';
+
+
+import { ConfigInterface } from './cookie-consent.interface';
 import { cookieConfig } from '../../services/default.js';
 import { Environment } from '../../services/environment.js';
 
@@ -63,9 +67,9 @@ export class CookieConsent {
 	setCookie(type?: string) {
 		let cookiePreferences = [];
 		this.checkedCategories.forEach(function (category) {
-			cookiePreferences = [...cookiePreferences, { 
+			cookiePreferences = [...cookiePreferences, {
 				category: category.name,
-				accepted: (type === 'all' ? true : category.enabled) 
+				accepted: (type === 'all' ? true : category.enabled)
 			}];
 		})
 		Cookies.set('cookiepreferences_' + this.currentEnvironment,
@@ -129,20 +133,29 @@ export class CookieConsent {
 	}
 
 	loadPreferences = () => {
+		const acceptCookiesWrapperClass = classNames(
+			'accept-all-cookies-wrapper',
+			'col-xs-12',
+			'col-md-4',
+			{
+      'u-text-right': !isMobile,
+      'u-text-center': isMobile
+    });
+
 		return (
 			<div>
 				<div class="m-modal__body">
-					<div class="row">
-						<div class="col-xs-8">
-							<h1 class='h3 u-margin-bottom u-margin-right'>Soorten Cookies</h1>
+					<div class={classNames('row', { 'u-margin-bottom': isMobile})}>
+						<div class="col-xs-12 col-md-8">
+							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
 						</div>
-						<div class="col-xs-4 u-text-right u-margin-top">
+						<div class={acceptCookiesWrapperClass}>
 							<a href="#" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</a>
 						</div>
 					</div>
 					{this.showCategories()}
 				</div>
-				<div class="m-modal__footer">
+				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
 					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
 				</div>
 			</div>
@@ -150,11 +163,16 @@ export class CookieConsent {
 	}
 
 	render() {
+		const overlayClass = classNames('m-overlay',{
+      'is-active': !this.hidden,
+      'mobile': isMobile
+    });
+
 		return (
 			<Host>
-				<div class={'m-overlay' + (this.hidden ? '' : ' is-active')}>
+				<div class={overlayClass}>
 					<div class='m-overlay__inner cookieconsent'>
-						<div class="m-modal m-modal--large modal-xxl">
+						<div class="m-modal m-modal--large">
 							<div class="m-modal__content">
 								{!this.showPreferences ? (
 									<div>
@@ -163,12 +181,12 @@ export class CookieConsent {
 											<p class='u-margin-bottom'>{this.configData.intro}</p>
 										</div>
 										<div class="m-modal__footer">
-											<button 
+											<button
 												class='a-button u-margin-right'
 												onClick={() => this.handleAcceptAll()}
 											>Alle cookies toestaan</button>
 											<button
-											class='a-button a-button--transparent'
+											class={'a-button a-button--transparent'}
 											onClick={() => this.handleShowPreferences()}
 											>Stel voorkeuren in</button>
 										</div>
