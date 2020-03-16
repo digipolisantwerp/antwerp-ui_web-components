@@ -150,7 +150,7 @@ export class CookieConsent {
 							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
-							<a href="#" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</a>
+							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
 						</div>
 					</div>
 					{this.showCategories()}
