@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-	namespace: 'acpaas-web-components',
+	namespace: 'acpaas-ui-cookie',
 	srcDir: 'src',
 	copy: [
 		{ src: 'services' }

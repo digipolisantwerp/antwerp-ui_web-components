@@ -4,8 +4,7 @@ import { Content } from '../../services/content.js';
 
 @Component({
 	tag: 'cookie-content-blocker',
-	styleUrl: 'content-blocker.scss',
-	shadow: true
+	styleUrl: 'content-blocker.scss'
 })
 export class ContentBlocker {
 	/** Type of content you want to hide. Choose from: 'youtube', 'facebook', 'twitter', 'instagram' */

@@ -1,6 +1,3 @@
-@import url('https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css');
-@import '~@a-ui/core/dist/main.css';
-
 .mobile {
 	.m-overlay__inner {
 		min-height: calc(100vh);
@@ -34,27 +31,24 @@
 }
 .category-item {
 	.category-item-nav {
-		padding: 10px 4px 10px 4px;
+		padding: 0.625rem 0.25rem 0.625rem 0.25rem;
 		background-color: #f3f3f3;
 		cursor: pointer;
 	}
 	.category-item-name {
-		padding-left: 24px;
+		padding-left: 1.5rem;
 		h2 {
 			line-height: 1.5;
 			.fa {
 				font-size: 1.5rem;
-				padding-right: 18px;
+				padding-right: 1.125rem;
 				display: inline;
 			}
 		}
 	}
 	.category-item-description {
-		-webkit-transition: max-height .2s ease-out;
-		-moz-transition:    max-height .2s ease-out;
-		-o-transition:      max-height .2s ease-out;
-		-ms-transition:     max-height .2s ease-out;
-		transition:         max-height .2s ease-out;
+		-ms-transition:	max-height .2s ease-out;
+		transition:	max-height .2s ease-out;
 		max-height: 0;
 		overflow: hidden;
 		td {
@@ -99,4 +93,55 @@
 	.a-switch__label {
 		flex: auto;
 	}
+}
+//Flexboxgrid classes
+.row {
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -0.5rem;
+	margin-left: -0.5rem;
+  }
+
+.col-xs-12,
+.col-xs-6,
+.col-md-8,
+.col-md-4 {
+	box-sizing: border-box;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+.col-xs-12 {
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	max-width: 100%;
+}
+.col-xs-6 {
+	-ms-flex-preferred-size: 50%;
+	flex-basis: 50%;
+	max-width: 50%;
+}
+.col-md-8 {
+	-ms-flex-preferred-size: 66.66666667%;
+    flex-basis: 66.66666667%;
+    max-width: 66.66666667%;
+}
+.col-md-4 {
+	-ms-flex-preferred-size: 33.33333333%;
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
 }
