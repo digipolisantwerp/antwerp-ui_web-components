@@ -13,6 +13,8 @@ import { Environment } from '../../services/environment.js';
 	styleUrl: 'cookie-consent.scss'
 })
 export class CookieConsent {
+	/** This will add a classname to the component wrapper */
+	@Prop() branding: string = "aui";
 	/** Configuration of your cookie consent window */
 	@Prop() config: string;
 	/** If set to true, the modal will show the cookie preferences and not the default screen with the title and description */
@@ -169,7 +171,7 @@ export class CookieConsent {
     });
 
 		return (
-			<Host>
+			<Host class={this.branding}>
 				<div class={overlayClass}>
 					<div class='m-overlay__inner cookieconsent'>
 						<div class="m-modal m-modal--large">

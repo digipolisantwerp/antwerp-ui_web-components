@@ -18,6 +18,10 @@ export namespace Components {
   }
   interface CookieConsent {
     /**
+    * This will add a classname to the component wrapper
+    */
+    'branding': string;
+    /**
     * Configuration of your cookie consent window
     */
     'config': string;
@@ -91,6 +95,10 @@ declare namespace LocalJSX {
     'onOpenCloseCategory'?: Function;
   }
   interface CookieConsent {
+    /**
+    * This will add a classname to the component wrapper
+    */
+    'branding'?: string;
     /**
     * Configuration of your cookie consent window
     */
