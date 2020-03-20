@@ -40,6 +40,10 @@ export namespace Components {
   }
   interface CookieContentBlocker {
     /**
+    * This will add a classname to the component wrapper
+    */
+    'branding': string;
+    /**
     * Show or hide icon
     */
     'icon': boolean;
@@ -117,6 +121,10 @@ declare namespace LocalJSX {
     'openPreferences'?: boolean;
   }
   interface CookieContentBlocker {
+    /**
+    * This will add a classname to the component wrapper
+    */
+    'branding'?: string;
     /**
     * Show or hide icon
     */

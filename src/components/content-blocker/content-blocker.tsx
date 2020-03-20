@@ -11,6 +11,8 @@ export class ContentBlocker {
 	@Prop() type: string;
 	/** Show or hide icon */
 	@Prop() icon: boolean = true;
+	/** This will add a classname to the component wrapper */
+	@Prop() branding: string = "aui";
 
 	@State() currentType: TypeInterface;
 
@@ -29,7 +31,7 @@ export class ContentBlocker {
 
 	render() {
 		return (
-			<Host>
+			<Host class={this.branding}>
 				<div class="content-blocker">
 					{this.icon &&
 					<div class="row center-xs u-margin-bottom-xs">
