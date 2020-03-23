@@ -37,6 +37,10 @@ export namespace Components {
     * If set to true, the modal will show the cookie preferences and not the default screen with the title and description
     */
     'openPreferences': boolean;
+    /**
+    * Runs when new cookie preferences are saved
+    */
+    'preferencesSaved': Function;
   }
   interface CookieContentBlocker {
     /**
@@ -119,6 +123,10 @@ declare namespace LocalJSX {
     * If set to true, the modal will show the cookie preferences and not the default screen with the title and description
     */
     'openPreferences'?: boolean;
+    /**
+    * Runs when new cookie preferences are saved
+    */
+    'preferencesSaved'?: Function;
   }
   interface CookieContentBlocker {
     /**

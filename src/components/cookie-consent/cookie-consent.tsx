@@ -23,6 +23,8 @@ export class CookieConsent {
 	@Prop() environment: string;
 	/** Set the domain where you want your cookiepreferences to be saved. eg. 'antwerpen.be' */
 	@Prop() domain: string;
+	/** Runs when new cookie preferences are saved */
+	@Prop() preferencesSaved: Function;
 
 	@State() configData: ConfigInterface;
 	@State() hidden: boolean = false;
@@ -78,6 +80,9 @@ export class CookieConsent {
 			cookiePreferences,
 			{ domain: this.domain || window.location.hostname, expires: 7 }
 		);
+		if (this.preferencesSaved) {
+			this.preferencesSaved(cookiePreferences);
+		}
 	}
 
 	checkCookie() {

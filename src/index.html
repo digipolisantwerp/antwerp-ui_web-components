@@ -70,4 +70,10 @@
 	</div>
 
 </body>
+<script>
+	const cookieConsent = document.querySelector('cookie-consent');
+	cookieConsent.preferencesSaved = function (params) {
+		console.log(params);
+	}
+  </script>
 </html>
