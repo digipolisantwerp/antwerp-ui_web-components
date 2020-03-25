@@ -1,28 +1,18 @@
-import { Component, Prop, Host, h, State } from '@stencil/core';
-import { TypeInterface } from './content-blocker.interface';
-import { Content } from '../../services/content.js';
+import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
 	tag: 'cookie-content-blocker',
 	styleUrl: 'content-blocker.scss'
 })
 export class ContentBlocker {
-	/** Type of content you want to hide. Choose from: 'youtube', 'facebook', 'twitter', 'instagram' */
-	@Prop() type: string;
-	/** Show or hide icon */
-	@Prop() icon: boolean = true;
+	/** The title */
+	@Prop() title: string;
+	/** The description */
+	@Prop() description: string;
+	/** Name of the FontAwesome icon you want to show */
+	@Prop() icon: string;
 	/** This will add a classname to the component wrapper */
 	@Prop() branding: string = "aui";
-
-	@State() currentType: TypeInterface;
-
-	componentWillLoad() {
-		this.findContentType();
-	}
-
-	findContentType() {
-		this.currentType = Content.find(type => type.name === this.type);
-	}
 
 	openCookiePreferences() {
 		const cookieConsentElement = document.querySelector('cookie-consent');
@@ -36,22 +26,22 @@ export class ContentBlocker {
 					{this.icon &&
 					<div class="row center-xs u-margin-bottom-xs">
 						<div class="col-xs-4">
-							<span class={"fa " + this.currentType.icon}></span>
+							<span class={"fa " + this.icon}></span>
 						</div>
 					</div>
 					}
 					<div class="row center-xs u-margin-bottom-xs">
 						<div class="col-xs-12">
 							{this.icon ? (
-								<h3 class="h6">{this.currentType.title}</h3>
+								<h3 class="h6">{this.title}</h3>
 							) : (
-								<b>{this.currentType.title}</b>
+								<b>{this.title}</b>
 							)}
 						</div>
 					</div>
 					<div class="row center-xs u-margin-bottom-xs">
 						<div class="col-xs-12">
-							<p>{this.currentType.description}</p>
+							<p>{this.description}</p>
 						</div>
 					</div>
 					<div class="row center-xs">

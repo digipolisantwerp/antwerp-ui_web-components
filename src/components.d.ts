@@ -48,13 +48,17 @@ export namespace Components {
     */
     'branding': string;
     /**
-    * Show or hide icon
+    * The description
     */
-    'icon': boolean;
+    'description': string;
     /**
-    * Type of content you want to hide. Choose from: 'youtube', 'facebook', 'twitter', 'instagram'
+    * Name of the FontAwesome icon you want to show
     */
-    'type': string;
+    'icon': string;
+    /**
+    * The title
+    */
+    'title': string;
   }
   interface CookieTable {
     'data': any[];
@@ -134,13 +138,17 @@ declare namespace LocalJSX {
     */
     'branding'?: string;
     /**
-    * Show or hide icon
+    * The description
     */
-    'icon'?: boolean;
+    'description'?: string;
     /**
-    * Type of content you want to hide. Choose from: 'youtube', 'facebook', 'twitter', 'instagram'
+    * Name of the FontAwesome icon you want to show
     */
-    'type'?: string;
+    'icon'?: string;
+    /**
+    * The title
+    */
+    'title'?: string;
   }
   interface CookieTable {
     'data'?: any[];
