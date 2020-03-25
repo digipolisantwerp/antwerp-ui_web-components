@@ -1,4 +1,4 @@
-# Installation
+# acpaas-ui cookie
 
 To install this library run:
 
