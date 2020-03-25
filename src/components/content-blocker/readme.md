@@ -14,11 +14,12 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                  | Type      | Default     |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `branding` | `branding` | This will add a classname to the component wrapper                                           | `string`  | `"aui"`     |
-| `icon`     | `icon`     | Show or hide icon                                                                            | `boolean` | `true`      |
-| `type`     | `type`     | Type of content you want to hide. Choose from: 'youtube', 'facebook', 'twitter', 'instagram' | `string`  | `undefined` |
+| Property      | Attribute     | Description                                        | Type     | Default     |
+| ------------- | ------------- | -------------------------------------------------- | -------- | ----------- |
+| `branding`    | `branding`    | This will add a classname to the component wrapper | `string` | `"aui"`     |
+| `description` | `description` | The description                                    | `string` | `undefined` |
+| `icon`        | `icon`        | Name of the FontAwesome icon you want to show      | `string` | `undefined` |
+| `title`       | `title`       | The title                                          | `string` | `undefined` |
 
 
 ----------------------------------------------
