@@ -1,13 +1,8 @@
 # cookie-content-blocker
 
 ```html
-<cookie-content-blocker type="youtube" icon="true"></cookie-content-blocker>
-<cookie-content-blocker type="facebook" icon="true"></cookie-content-blocker>
-<cookie-content-blocker type="twitter" icon="true"></cookie-content-blocker>
-<cookie-content-blocker type="instagram" icon="true"></cookie-content-blocker>
-<cookie-content-blocker type="youtube" icon="false"></cookie-content-blocker>
+<cookie-content-blocker title="Video kon niet getoond worden" icon="Je moet je cookievoorkeuren aanpassen om deze video te kunnen afspelen" icon="fa-youtube"></cookie-content-blocker>
 ```
-
 
 <!-- Auto Generated Below -->
 
