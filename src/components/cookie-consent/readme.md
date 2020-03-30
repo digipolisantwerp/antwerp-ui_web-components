@@ -85,6 +85,10 @@ Example of config JSON object:
 }
 ```
 
+## Example in React
+
+Read the docs [here](./docs/cookie-consent-react.md)
+
 <!-- Auto Generated Below -->
 
 
@@ -98,10 +102,6 @@ Example of config JSON object:
 | `environment`      | `environment`      | Set the current enovironment, this will impact the name of the cookie where the preferences will be saved. eg. 'acceptance' | `string`   | `undefined` |
 | `openPreferences`  | `open-preferences` | If set to true, the modal will show the cookie preferences and not the default screen with the title and description        | `boolean`  | `undefined` |
 | `preferencesSaved` | --                 | Runs when new cookie preferences are saved                                                                                  | `Function` | `undefined` |
-
-## Example in React
-
-Read the docs [here](./docs/cookie-consent-react.md)
 
 ## Dependencies
 
