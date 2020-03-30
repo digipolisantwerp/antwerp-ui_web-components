@@ -103,6 +103,7 @@ Read the docs [here](./docs/cookie-consent-react.md)
 | `openPreferences`  | `open-preferences` | If set to true, the modal will show the cookie preferences and not the default screen with the title and description        | `boolean`  | `undefined` |
 | `preferencesSaved` | --                 | Runs when new cookie preferences are saved                                                                                  | `Function` | `undefined` |
 
+
 ## Dependencies
 
 ### Depends on
