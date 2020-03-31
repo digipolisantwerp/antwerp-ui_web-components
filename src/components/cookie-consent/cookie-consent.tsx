@@ -185,7 +185,7 @@ export class CookieConsent {
 									<div>
 										<div class="m-modal__body">
 											<h1 class='h3 u-margin-bottom'>{this.configData.title}</h1>
-											<p class='u-margin-bottom'>{this.configData.intro}</p>
+											<p class='u-margin-bottom' innerHTML={this.configData.intro}></p>
 										</div>
 										<div class="m-modal__footer">
 											<button

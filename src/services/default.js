@@ -1,12 +1,12 @@
 export const cookieConfig = {
 	"title": "Welkom!",
-	"intro": "Antwerpen.be maakt gebruik van cookies. Aan de hand van die cookies verzamelt en analyseert Antwerpen.be informatie over uw bezoek. Genieten van een optimale A-ervaring? Bevestig met alle cookies toestaan. Stel voorkeuren in en bepaal welke informatie u met Antwerpen deelt. Houd er rekening mee dat bepaalde media enkel beschikbaar zijn indien u de cookies ervan aanvaardt. Antwerpen.be bewaart cookievoorkeuren. U kan ze aanpassen via cookies beheren. Meer weten? Raadpleeg onze Cookieverklaring. Antwerpen.be waardeert uw vertrouwen en wenst u een verrijkende surfervaring toe!",
+	"intro": "Antwerpen.be maakt gebruik van cookies. Aan de hand van die cookies verzamelt en analyseert Antwerpen.be informatie over uw bezoek. Genieten van een optimale A-ervaring? Bevestig met alle cookies toestaan. Stel voorkeuren in en bepaal welke informatie u met Antwerpen deelt. Houd er rekening mee dat bepaalde media enkel beschikbaar zijn indien u de cookies ervan aanvaardt. Antwerpen.be bewaart cookievoorkeuren. U kan ze aanpassen via cookies beheren. Meer weten? Raadpleeg onze <a href='https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d' target='_blank'>Cookieverklaring</a>. Antwerpen.be waardeert uw vertrouwen en wenst u een verrijkende surfervaring toe!",
 	"cookieConfig": [
 		{
 			"name": "Noodzakelijk",
 			"showSwitch": false,
 			"enabled": true,
-			"description": "Noodzakelijke cookies zijn cookies die ervoor zorgen dat alle onderdelen van de website goed werken. Het zijn cookies voor de beveiliging van de website, cookies voor load balancing (i.e. de verdeling van requests aan een webserver over een aantal computers) en cookies voor de aanpassing van de gebruikersinterface (m.n. de taalkeuze en de weergave van zoekresultaten). Deze cookies mogen wij plaatsen zonder dat u hier toestemming voor geeft. Indien u deze website gebruikt aanvaardt u deze noodzakelijke cookies.",
+			"description": "Noodzakelijke cookies zijn cookies die ervoor zorgen dat alle onderdelen van de website goed werken.",
 			"open": false,
 			"cookies": [
 				{
@@ -46,7 +46,7 @@ export const cookieConfig = {
 					"cookie": "Google analytics",
 					"type": "Derde partij",
 					"duration": "1 minuut tot 2 jaar",
-					"description": "Via analytische cookies verzamelt antwerpen.be onder andere informatie over het aantal unieke bezoekers, via welk kanaal de bezoekers komen en hoe bezoekers de website gebruiken. De analyserapporten van Google Analytics geven een inzicht in deze data waardoor de structuur, de navigatie en de inhoud van antwerpen.be telkens verbeterd kunnen worden.",
+					"description": "Analytische cookies meten het websitebezoek. Deze gegevens laten ons toe om de structuur, navigatie en inhoud van onze website te verbeteren.",
 					"subCookies": [
 						{
 							"name": "_ga",
@@ -93,7 +93,7 @@ export const cookieConfig = {
 			"name": "Marketing",
 			"showSwitch": true,
 			"enabled": false,
-			"description": "U dient marketing cookies in te schakelen om video’s af te spelen en artikels te delen met anderen via derde partijen zoals Twitter, LinkedIn en Facebook. Marketing cookies maken het mogelijk het online advertentieaanbod te personaliseren. Op deze manier kunnen wij (en derde partijen) inzicht verkrijgen in campagneprestaties. Dit gebeurt aan de hand van een profiel dat wordt opgesteld op basis van uw klik- en surfgedrag op onze website.",
+			"description": "U dient marketing cookies in te schakelen om op de website inhoud te tonen die afkomstig is van derde partijen zoals Youtube, Soundcloud of Twitter.",
 			"open": false,
 			"cookies": [
 				{
