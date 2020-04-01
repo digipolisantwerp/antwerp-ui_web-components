@@ -39,7 +39,7 @@ export const cookieConfig = {
 			"name": "Analytics",
 			"showSwitch": true,
 			"enabled": false,
-			"description": "",
+			"description": "Analytische cookies meten het websitebezoek. Deze gegevens laten ons toe om de structuur, navigatie en inhoud van onze website te verbeteren.",
 			"open": false,
 			"cookies": [
 				{
@@ -100,25 +100,25 @@ export const cookieConfig = {
 					"cookie": "Youtube VISITOR_INFO1_LIVE",
 					"type": "Derde partij",
 					"duration": "5 maanden",
-					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie is wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
+					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "Youtube YSC",
 					"type": "Derde partij",
 					"duration": "sessie",
-					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie is wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
+					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "Youtube GPS",
 					"type": "Derde partij",
 					"duration": "30 minuten",
-					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie is wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
+					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "PollDaddy PD_poll",
 					"type": "Derde partij",
 					"duration": "7 dagen",
-					"description": "Via Antwerpen.be verzamelt de stad Antwerpen graag uw mening  of stem om de dienstverlening van de stad te optimaliseren. We gebruiken hiervoor de dienst PolDaddy. Zij plaatsen één of meerdere cookies op uw computer om uw stem bij te houden.  Deze cookie is wordt gezet door PollDaddy en is noodzakelijk voor het gebruik van deze functionaliteit."
+					"description": "Via Antwerpen.be verzamelt de stad Antwerpen graag uw mening  of stem om de dienstverlening van de stad te optimaliseren. We gebruiken hiervoor de dienst PolDaddy. Zij plaatsen één of meerdere cookies op uw computer om uw stem bij te houden.  Deze cookie wordt gezet door PollDaddy en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "Twitter",
@@ -130,7 +130,7 @@ export const cookieConfig = {
 					"cookie": "Soundcloud sc_anonymous_id",
 					"type": "Derde partij",
 					"duration": "10 jaar",
-					"description": "De dienst Soundcloud biedt originele audiofragmenten aan. Ook antwerpen.be maakt hiervan gebruik. Soundcloud plaatst cookies op uw computer om de gebruikerservaring te verbeteren. Deze cookie is wordt gezet door Soundcloud en is noodzakelijk voor het gebruik van deze functionaliteit."
+					"description": "De dienst Soundcloud biedt originele audiofragmenten aan. Ook antwerpen.be maakt hiervan gebruik. Soundcloud plaatst cookies op uw computer om de gebruikerservaring te verbeteren. Deze cookie wordt gezet door Soundcloud en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "Google DoubleClick IDE",
