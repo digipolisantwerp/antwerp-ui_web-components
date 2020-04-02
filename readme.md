@@ -10,8 +10,9 @@ NOTE: Make sure you have a .npmrc file in the root of your project with the foll
 registry=https://nexusrepo.antwerpen.be/repository/npm-all/
 ```
 # Polyfills for older browers and browsers that not support web components
-To make this library work on these browsers, you need to include the following script before you load your web component:
+To make this library work on these browsers, you need to include the following scripts before you load your web component:
 ```html
+<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js"></script>
 ```
 
