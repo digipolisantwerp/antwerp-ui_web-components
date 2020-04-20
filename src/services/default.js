@@ -1,6 +1,6 @@
 export const cookieConfig = {
 	"title": "Welkom!",
-	"intro": "Antwerpen.be maakt gebruik van cookies. Aan de hand van die cookies verzamelt en analyseert Antwerpen.be informatie over uw bezoek. Genieten van een optimale A-ervaring? Bevestig met alle cookies toestaan. Stel voorkeuren in en bepaal welke informatie u met Antwerpen deelt. Houd er rekening mee dat bepaalde media enkel beschikbaar zijn indien u de cookies ervan aanvaardt. Antwerpen.be bewaart cookievoorkeuren. U kan ze aanpassen via cookies beheren. Meer weten? Raadpleeg onze <a href='https://www.antwerpen.be/nl/info/5310f241aaa8a74f6c8b458d' target='_blank'>Cookieverklaring</a>. Antwerpen.be waardeert uw vertrouwen en wenst u een verrijkende surfervaring toe!",
+	"intro": "Antwerpen.be maakt gebruik van cookies. Aan de hand van die cookies verzamelt en analyseert Antwerpen.be informatie over uw bezoek. Genieten van een optimale A-ervaring? Bevestig met alle cookies toestaan. Stel voorkeuren in en bepaal welke informatie u met Antwerpen deelt. Houd er rekening mee dat bepaalde media enkel beschikbaar zijn indien u de cookies ervan aanvaardt. Antwerpen.be bewaart cookievoorkeuren. U kan ze aanpassen via cookies beheren. Meer weten? Raadpleeg onze <a href='https://www.antwerpen.be/nl/info/5e9d5a6cd93901b20b3a2b82/cookiebeleid' target='_blank'>Cookieverklaring</a>. Antwerpen.be waardeert uw vertrouwen en wenst u een verrijkende surfervaring toe!",
 	"cookieConfig": [
 		{
 			"name": "Noodzakelijk",
@@ -113,12 +113,6 @@ export const cookieConfig = {
 					"type": "Derde partij",
 					"duration": "30 minuten",
 					"description": "Via de dienst YouTube kan u video’s bekijken die we op antwerpen.be plaatsen. YouTube zet mogelijk één of meerdere cookies op uw computer om uw surfgedrag te registreren en om voor u relevante video’s te kunnen suggereren. Deze cookie wordt gezet door Youtube en is noodzakelijk voor het gebruik van deze functionaliteit."
-				},
-				{
-					"cookie": "PollDaddy PD_poll",
-					"type": "Derde partij",
-					"duration": "7 dagen",
-					"description": "Via Antwerpen.be verzamelt de stad Antwerpen graag uw mening  of stem om de dienstverlening van de stad te optimaliseren. We gebruiken hiervoor de dienst PolDaddy. Zij plaatsen één of meerdere cookies op uw computer om uw stem bij te houden.  Deze cookie wordt gezet door PollDaddy en is noodzakelijk voor het gebruik van deze functionaliteit."
 				},
 				{
 					"cookie": "Twitter",
