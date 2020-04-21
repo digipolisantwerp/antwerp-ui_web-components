@@ -38,6 +38,7 @@ export class CookieConsent {
 		this.loadConfig();
 		this.checkEnvironment();
 		this.checkCookie();
+		this.checkExcludedPaths();
 	}
 
 	@Watch('config')
@@ -53,11 +54,11 @@ export class CookieConsent {
 		this.showPreferences = newValue;
 	}
 
-	isExcludedPath() {
+	checkExcludedPaths() {
 		if(this.excludedpaths && this.excludedpaths.length > 0){
 			const excludedPaths = this.excludedpaths.split(",");
 			if(excludedPaths.indexOf(window.location.pathname) > -1) {
-				return true;
+				this.hideModal();
 			}
 		}
 	}
@@ -131,6 +132,10 @@ export class CookieConsent {
 		this.openPreferences = false;
 	}
 
+	hideModal() {
+		this.hidden = true;
+	}
+
 	showCategories = () => {
 		const checkCategory = (key, e) => {
 			this.checkedCategories = [...this.checkedCategories];
@@ -185,7 +190,6 @@ export class CookieConsent {
       'is-active': !this.hidden,
       'mobile': isMobile
 		});
-		if(this.isExcludedPath()) { return false; }
 		return (
 			<Host class={this.branding}>
 				<div class={overlayClass}>
