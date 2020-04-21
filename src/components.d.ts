@@ -34,6 +34,10 @@ export namespace Components {
     */
     'environment': string;
     /**
+    * Single path or comma seperated list of paths on which the cookie consent will not open
+    */
+    'excludedpaths': string;
+    /**
     * If set to true, the modal will show the cookie preferences and not the default screen with the title and description
     */
     'openPreferences': boolean;
@@ -123,6 +127,10 @@ declare namespace LocalJSX {
     * Set the current enovironment, this will impact the name of the cookie where the preferences will be saved. eg. 'acceptance'
     */
     'environment'?: string;
+    /**
+    * Single path or comma seperated list of paths on which the cookie consent will not open
+    */
+    'excludedpaths'?: string;
     /**
     * If set to true, the modal will show the cookie preferences and not the default screen with the title and description
     */

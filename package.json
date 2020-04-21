@@ -1,6 +1,6 @@
 {
     "name": "@acpaas-ui/cookie",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "description": "ACPaaS UI cookie component",
     "author": "Wim Vanhorenbeeck",
     "main": "dist/index.js",

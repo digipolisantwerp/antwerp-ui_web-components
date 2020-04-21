@@ -14,7 +14,7 @@ import { Environment } from '../../services/environment.js';
 })
 export class CookieConsent {
 	/** This will add a classname to the component wrapper */
-	@Prop() branding: string = "aui";
+	@Prop() branding: string = 'aui';
 	/** Configuration of your cookie consent window */
 	@Prop() config: string;
 	/** If set to true, the modal will show the cookie preferences and not the default screen with the title and description */
@@ -23,6 +23,8 @@ export class CookieConsent {
 	@Prop() environment: string;
 	/** Set the domain where you want your cookiepreferences to be saved. eg. 'antwerpen.be' */
 	@Prop() domain: string;
+	/** Single path or comma seperated list of paths on which the cookie consent will not open */
+	@Prop() excludedpaths: string;
 	/** Runs when new cookie preferences are saved */
 	@Prop() preferencesSaved: Function;
 
@@ -49,6 +51,13 @@ export class CookieConsent {
 		this.checkCookie();
 		this.hidden = !newValue;
 		this.showPreferences = newValue;
+	}
+
+	isExcludedPath() {
+		const excludedPaths = this.excludedpaths.split(",");
+		if(excludedPaths.length > 0 && (excludedPaths.indexOf(window.location.pathname) > -1)) {
+			return true;
+		}
 	}
 
 	loadConfig() {
@@ -173,8 +182,8 @@ export class CookieConsent {
 		const overlayClass = classNames('m-overlay',{
       'is-active': !this.hidden,
       'mobile': isMobile
-    });
-
+		});
+		if(this.isExcludedPath()) { return false; }
 		return (
 			<Host class={this.branding}>
 				<div class={overlayClass}>
