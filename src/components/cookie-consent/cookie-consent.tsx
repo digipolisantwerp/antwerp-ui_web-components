@@ -54,9 +54,11 @@ export class CookieConsent {
 	}
 
 	isExcludedPath() {
-		const excludedPaths = this.excludedpaths.split(",");
-		if(excludedPaths.length > 0 && (excludedPaths.indexOf(window.location.pathname) > -1)) {
-			return true;
+		if(this.excludedpaths && this.excludedpaths.length > 0){
+			const excludedPaths = this.excludedpaths.split(",");
+			if(excludedPaths.indexOf(window.location.pathname) > -1) {
+				return true;
+			}
 		}
 	}
 
