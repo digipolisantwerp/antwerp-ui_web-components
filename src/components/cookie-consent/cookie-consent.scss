@@ -103,6 +103,11 @@
 		flex: auto;
 	}
 }
+@media only screen and (max-width: 768px) {
+  .m-modal {
+		margin-top: 50%;
+	}
+}
 //Flexboxgrid classes
 .row {
 	box-sizing: border-box;
