@@ -191,7 +191,7 @@ export class CookieConsent {
       'mobile': isMobile
 		});
 		return (
-			<Host class={this.branding}>
+			<Host class={this.branding} role='alert'>
 				<div class={overlayClass}>
 					<div class='m-overlay__inner cookieconsent'>
 						<div class="m-modal m-modal--large">
