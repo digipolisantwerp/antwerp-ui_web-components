@@ -173,13 +173,13 @@ export class CookieConsent {
 							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
-							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
+							<a href="#" class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</a>
 						</div>
 					</div>
 					{this.showCategories()}
 				</div>
 				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
-					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
+					<a href="#" class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</a>
 				</div>
 			</div>
 		)
@@ -203,14 +203,16 @@ export class CookieConsent {
 											<p class='u-margin-bottom' innerHTML={this.configData.intro}></p>
 										</div>
 										<div class="m-modal__footer">
-											<button
+											<a
+												href="#"
 												class='a-button u-margin-right'
 												onClick={() => this.handleAcceptAll()}
-											>Alle cookies toestaan</button>
-											<button
+											>Alle cookies toestaan</a>
+											<a
+											href="#"
 											class={'a-button a-button--transparent'}
 											onClick={() => this.handleShowPreferences()}
-											>Stel voorkeuren in</button>
+											>Stel voorkeuren in</a>
 										</div>
 									</div>
 								) : this.loadPreferences()
