@@ -16,6 +16,12 @@ export const cookieConfig = {
 					"description": "AOS of het Antwerp Operating System plaatst sessiegebaseerde cookies op uw computer waarmee gebruikers die terugkeren naar antwerpen.be kunnen geïdentificeerd worden. Dit verhoogt het gebruiksgemak: de gebruiker blijft aangemeld en moet per app niet opnieuw aanmelden (Single Sign On)."
 				},
 				{
+					"cookie": "eidToken",
+					"type": "Eerste partij",
+					"duration": "30 minuten",
+					"description": "Het eidToken plaatst sessiegebonden cookies op uw computer waarmee gebruikers die terugkeren naar antwerpen.be kunnen geïdentificeerd worden. Dit verhoogt het gebruiksgemak en zorgt er voor dat de gebruiker bepaalde gegevens niet opnieuw moet ingeven."
+				},
+				{
 					"cookie": "authsessionid",
 					"type": "Eerste partij",
 					"duration": "sessie",
