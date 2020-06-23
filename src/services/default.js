@@ -12,14 +12,14 @@ export const cookieConfig = {
 				{
 					"cookie": "AOS",
 					"type": "Eerste partij",
-					"duration": "10 minuten",
+					"duration": "sessie",
 					"description": "AOS of het Antwerp Operating System plaatst sessiegebaseerde cookies op uw computer waarmee gebruikers die terugkeren naar antwerpen.be kunnen geïdentificeerd worden. Dit verhoogt het gebruiksgemak: de gebruiker blijft aangemeld en moet per app niet opnieuw aanmelden (Single Sign On)."
 				},
 				{
-					"cookie": "eidToken",
+					"cookie": "authsessionid",
 					"type": "Eerste partij",
-					"duration": "30 minuten",
-					"description": "Het eidToken plaatst sessiegebonden cookies op uw computer waarmee gebruikers die terugkeren naar antwerpen.be kunnen geïdentificeerd worden. Dit verhoogt het gebruiksgemak en zorgt er voor dat de gebruiker bepaalde gegevens niet opnieuw moet ingeven."
+					"duration": "sessie",
+					"description": "Deze cookie wordt gebruikt om de gebruiker op de huidige webpagina te kunnen identificeren."
 				},
 				{
 					"cookie": "dgp.auth.ssoKey",
@@ -71,19 +71,11 @@ export const cookieConfig = {
 					"subCookies": [
 						{
 							"name": "_hjid",
-							"duration": "1 jaar"
-						},
-						{
-							"name": "_hjTLDTest",
 							"duration": "sessie"
 						},
 						{
-							"name": "_hjIncludedInSample",
-							"duration": "1 jaar"
-						},
-						{
-							"name": "_hjCachedUserAttributes",
-							"duration": "sessie"
+							"name": "_hjAbsoluteSessionInProgress",
+							"duration": "30 minuten"
 						}
 					]
 				}
