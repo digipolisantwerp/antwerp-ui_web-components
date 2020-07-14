@@ -116,20 +116,17 @@ export class CookieConsent {
 		this.showPreferences = true;
 	}
 
-	handleAcceptAll(event) {
-		event.preventDefault();
+	handleAcceptAll() {
 		this.setCookie('all');
 		this.hidden = true;
 		this.openPreferences = false;
 	}
 
-	handleShowPreferences(event) {
-		event.preventDefault();
+	handleShowPreferences() {
 		this.showPreferences = true;
 	}
 
-	savePreferences(event) {
-		event.preventDefault();
+	savePreferences() {
 		this.setCookie();
 		this.hidden = true;
 		this.openPreferences = false;
@@ -176,13 +173,13 @@ export class CookieConsent {
 							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
-							<a href="#" class="a-button a-button--transparent a-button--tiny" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies toestaan</a>
+							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
 						</div>
 					</div>
 					{this.showCategories()}
 				</div>
 				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
-					<a href="#" class='a-button' onClick={(e) => this.savePreferences(e)}>Voorkeuren opslaan</a>
+					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
 				</div>
 			</div>
 		)
@@ -206,16 +203,14 @@ export class CookieConsent {
 											<p class='u-margin-bottom' innerHTML={this.configData.intro}></p>
 										</div>
 										<div class="m-modal__footer">
-											<a
-												href="#"
+											<button
 												class='a-button u-margin-right'
-												onClick={(e) => this.handleAcceptAll(e)}
-											>Alle cookies toestaan</a>
-											<a
-											href="#"
+												onClick={() => this.handleAcceptAll()}
+											>Alle cookies toestaan</button>
+											<button
 											class={'a-button a-button--transparent'}
-											onClick={(e) => this.handleShowPreferences(e)}
-											>Stel voorkeuren in</a>
+											onClick={() => this.handleShowPreferences()}
+											>Stel voorkeuren in</button>
 										</div>
 									</div>
 								) : this.loadPreferences()
