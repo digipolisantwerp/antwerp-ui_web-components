@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-	namespace: 'acpaas-ui-cookie',
+	namespace: 'acpaas-ui-web-components',
 	srcDir: 'src',
 	copy: [
 		{ src: 'services' }
@@ -11,7 +11,7 @@ export const config: Config = {
 		sass()
 	],
 	bundles: [
-		{ 
+		{
 			components: [
 				'cookie-consent',
 				'cookie-content-blocker'
@@ -19,10 +19,10 @@ export const config: Config = {
 		}
 	],
 	outputTargets: [
-		{ 
+		{
 			type: 'dist'
 		},
-		{ 
+		{
 			type: 'docs-readme'
 		},
 		{
