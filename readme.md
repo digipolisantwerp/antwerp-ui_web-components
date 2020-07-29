@@ -1,79 +1,107 @@
-# acpaas-ui cookie
+# ACPaaS UI - Web Components
 
-To install this library run:
+## Introduction
 
-```bash
-npm install @acpaas-ui/cookie
+Antwerp City Platform as a Service User Interface (ACPaas UI) is a **component interface library** for building user interfaces and responsive web apps. It's designed to provide developers with functionality and UI/UX patterns that matches the Antwerpen styleguide.
+
+
+## Ecosystem
+
+This library is part of [ACPaaS UI](https://acpaas-ui.digipolis.be).
+
+
+## Getting Started
+
+### Running the project locally
+
+```shell
+npm i
+npm start
 ```
-NOTE: Make sure you have a .npmrc file in the root of your project with the following code: 
-```javascript
-registry=https://nexusrepo.antwerpen.be/repository/npm-all/
+
+### Use ACPaaS UI web components in your project
+
+```shell
+npm install @acpaas-ui/web-components
 ```
-# Polyfills for older browers and browsers that not support web components
-To make this library work on these browsers, you need to include the following scripts before you load your web component:
+
+> Scroll down for a list with all available components.
+
+To integrate these web components in your framework of choice, please [follow the steps explained here](https://stenciljs.com/docs/overview).
+
+Use polyfills for older browers and browsers that not support web components. To make ACPaaS UI work in these browsers, you need to include the following scripts before you load your web component:
+
 ```html
 <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js"></script>
 ```
 
-# Important note
-
-To use these web components in your project, please follow the steps explained in the following guide: https://stenciljs.com/docs/overview
-
-# cookie-consent
-
-Read the docs [here](src/components/cookie-consent/readme.md)
-
-# cookie-content-blocker
-
-Read the docs [here](src/components/content-blocker/readme.md)
+Take a look at the component documentation below to learn how to use each component.
 
 
-# Development of this library
+## Components
 
-## Getting Started
+This library contains the following components:
 
-To start up the app run:
+| Name               | Documentation                                                |
+| ------------------ | ------------------------------------------------------------ |
+| content-blocker    | [Documentation](./src/components/cookie-consent/readme.md)   |
+| cookie-consent     | [Documentation](./src/components/content-blocker/readme.md)  |
 
-```bash
-npm start
+
+## Styling
+
+Use [one of our brandings](https://github.com/a-ui/) to adhere to the styling guidelines:
+
+```html
+// Antwerp core branding
+<link rel="stylesheet" href="https://cdn.antwerpen.be/core_branding_scss/4.1.1/main.min.css">
+
+// Digipolis
+<link rel="stylesheet" href="https://cdn.antwerpen.be/digipolis_branding_scss/4.1.1/main.min.css">
+
+// ACPaaS
+<link rel="stylesheet" href="https://cdn.antwerpen.be/acpaas_branding_scss/4.1.1/main.min.css">
 ```
 
-To build the components for production, run:
+If needed, you can add a branding-compatible [flexbox grid layout system](https://github.com/a-ui/core_flexboxgrid_scss):
 
-```bash
-npm run build
+```html
+<link rel="stylesheet" href="https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css">
 ```
 
-To run the unit tests for the components, run:
+For other styling-related things, like e.g. favicons, [check out GitHub](https://github.com/a-ui/).
 
-```bash
-npm test
+
+## Development
+
+### Creating Components
+
+The Stencil CLI can generate new components for you. If you used one of the starters, you can simply run the generate npm script in your project, which will start the interactive generator.
+
+```shell
+npm run generate
 ```
 
-Need help? Check out Stenciljs docs [here](https://stenciljs.com/docs/my-first-component).
+Or you can invoke the Stencil CLI directly with the generate command (g for short). If you don't have stencil installed globally, prefix the command with npx.
 
-##	Styling
+```shell
+stencil generate
+```
 
-Check out the documentation and how to use the core branding [here](https://a-ui.github.io/core_branding_scss/). 
+Need more help? Check out [the Stencil.js documentation](https://stenciljs.com/docs/my-first-component).
 
-Check out the documentation and how to use flexboxgrid [here](http://flexboxgrid.com/).
-
-> Note that you are free to use your own grid, as long as it meets our branding guidelines.
-
-## Storybook
+### Storybook
 
 To start the Storybook component library in your browser, run:
 
-```bash
+```shell
 npm run storybook
 ```
 
-##	Adding a component to Storybook
+To add a component to Storybook, go inside the folder of the component you would like to document and create a new file called `<component-name>`.stories.js.
 
-Go inside the folder of the component you would like to document and create a new file called {component-name}.stories.js.
-
-Now inside that file, if your web component doesn't use an impertitive API and you don't need to call methods on it, I've found the easiest way to write stories is using plain old strings:
+Now inside that file, if your web component doesn't use an impertitive API and you don't need to call methods on it, the easiest way to write stories is using plain old strings:
 
 ```javascript
 import { storiesOf } from '@storybook/html';
@@ -88,34 +116,42 @@ storiesOf('Component', module)
   `, { notes });
 ```
 
-You can read the Storybook documentation [here](https://storybook.js.org/docs/basics/introduction/).
+More documentation can be found [on the Storybook website](https://storybook.js.org/docs/basics/introduction/).
 
-## Creating Components
 
-The Stencil CLI can generate new components for you. If you used one of the starters, you can simply run the generate npm script in your project, which will start the interactive generator.
+## Testing
 
-```bash
-npm run generate
-```
+### Test automation
 
-Or you can invoke the Stencil CLI directly with the generate command (g for short). If you don't have stencil installed globally, prefix the command with npx.
+If you want to start automating your tests, you can have a look at our [Test Automation Guide](./TEST_AUTOMATION.md) for some tips on how to use data-attributes to keep your tests stable and maintainable.
 
-```bash
-stencil generate
-```
+### Cross Browser Testing
 
-## Publishing Components
+We are using [Browserstack Live](https://www.browserstack.com/live) to make sure that our components work correctly on all major browsers and platforms.<br/>
+The people at Browserstack kindly offer an unlimited testing program, free of charge for open source projects so a big thanks to them!
 
-- [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+<a href="http://browserstack.com/"><img width="250" src="https://cloud.githubusercontent.com/assets/7864462/12837037/452a17c6-cb73-11e5-9f39-fc96893bc9bf.png" alt="Browserstack logo"></a>
+
+
+## Changelog
+
+Detailed changes for each release are documented in the [changelog](./CHANGELOG.md).
+
+
+## Questions
+
+For questions and support please ask a question on the [#acpaas-ui slack channel](https://digantcafe.slack.com/messages/CDDLYJU65/). If you're not yet a member of our DigAnt Café slack community, you can easily [join here](https://digantcafe-slack.digipolis.be).
+
+If you stumble across a bug or missing feature, feel free to [report an issue](https://github.com/digipolisantwerp/acpaas-ui_web-components/issues).
+
 
 ## Author(s)
 
 - [Wim Vanhorenbeeck](https://github.com/wimvanhorenbeeck)
 
+
 ## License
 
 [MIT](./LICENSE.md)
 
-Copyright (c) 2020-present, Digipolis
+Copyright (c) 2020 Digipolis

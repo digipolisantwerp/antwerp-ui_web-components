@@ -1,8 +1,8 @@
 {
-    "name": "@acpaas-ui/cookie",
+    "name": "@acpaas-ui/web-components",
     "version": "1.0.23",
-    "description": "ACPaaS UI cookie component",
-    "author": "Wim Vanhorenbeeck",
+    "description": "ACPaaS UI web components",
+    "author": "Digipolis Antwerpen",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "es2015": "dist/esm/index.mjs",
@@ -12,8 +12,7 @@
     "collection:main": "dist/collection/index.js",
     "unpkg": "dist/cookieconsent/cookieconsent.js",
     "files": [
-        "dist/",
-        "loader/"
+        "dist/"
     ],
     "scripts": {
         "build": "stencil build --docs",
@@ -31,7 +30,12 @@
         "@storybook/addon-notes": "^5.3.13",
         "@storybook/addon-viewport": "^5.3.13",
         "@storybook/html": "^5.3.13",
+        "@types/jest": "24.0.25",
+        "@types/puppeteer": "1.20.6",
         "babel-loader": "^8.0.6",
+        "jest": "24.9.0",
+        "jest-cli": "24.9.0",
+        "puppeteer": "1.20.0",
         "workbox-build": "4.3.1"
     },
     "license": "MIT",
