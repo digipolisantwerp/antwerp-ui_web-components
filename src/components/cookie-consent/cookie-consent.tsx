@@ -9,7 +9,7 @@ import { cookieConfig } from '../../services/default.js';
 import { Environment } from '../../services/environment.js';
 
 @Component({
-	tag: 'cookie-consent',
+	tag: 'aui-cookie-consent',
 	styleUrl: 'cookie-consent.scss'
 })
 export class CookieConsent {
@@ -146,12 +146,12 @@ export class CookieConsent {
 			this.checkedCategories[key].open = !this.checkedCategories[key].open;
 		}
 		return this.checkedCategories.map((category, key) =>
-			<cookie-category
+			<aui-cookie-category
 				data={category}
 				index={key}
 				onCheckCategory={checkCategory}
 				onOpenCloseCategory={handleOpenCloseCategory}
-			></cookie-category>
+			></aui-cookie-category>
 		)
 	}
 

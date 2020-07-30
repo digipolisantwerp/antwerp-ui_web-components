@@ -2,7 +2,7 @@ import { Component, Prop, h } from '@stencil/core';
 import { isMobile } from 'react-device-detect';
 
 @Component({
-	tag: 'cookie-category',
+	tag: 'aui-cookie-category',
 })
 export class CookieCategory {
 	@Prop() data: any[];
@@ -47,7 +47,7 @@ export class CookieCategory {
 				<div class={"category-item-description " + (item.open ? "open" : "")}>
 					<p class="u-margin-bottom-xs">{item.description}</p>
 					{item.cookies &&
-						<cookie-table data={item}></cookie-table>
+						<aui-cookie-table data={item}></aui-cookie-table>
 					}
 				</div>
 			</div>

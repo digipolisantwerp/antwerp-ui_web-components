@@ -1,7 +1,7 @@
 import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
-	tag: 'cookie-content-blocker',
+	tag: 'aui-cookie-content-blocker',
 	styleUrl: 'content-blocker.scss'
 })
 export class ContentBlocker {
@@ -15,7 +15,7 @@ export class ContentBlocker {
 	@Prop() branding: string = "aui";
 
 	openCookiePreferences() {
-		const cookieConsentElement = document.querySelector('cookie-consent');
+		const cookieConsentElement = document.querySelector('aui-cookie-consent');
 		cookieConsentElement.openPreferences = true;
 	}
 

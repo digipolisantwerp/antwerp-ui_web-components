@@ -1,6 +1,6 @@
 # cookie-consent
 ```html
-<cookie-consent config={configObject}></cookie-consent>
+<aui-cookie-consent config={configObject}></aui-cookie-consent>
 ```
 
 Example of config JSON object:

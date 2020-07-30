@@ -10,13 +10,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface CookieCategory {
+  interface AuiCookieCategory {
     'data': any[];
     'index': number;
     'onCheckCategory': Function;
     'onOpenCloseCategory': Function;
   }
-  interface CookieConsent {
+  interface AuiCookieConsent {
     /**
     * This will add a classname to the component wrapper
     */
@@ -46,7 +46,7 @@ export namespace Components {
     */
     'preferencesSaved': Function;
   }
-  interface CookieContentBlocker {
+  interface AuiCookieContentBlocker {
     /**
     * This will add a classname to the component wrapper
     */
@@ -64,7 +64,7 @@ export namespace Components {
     */
     'title': string;
   }
-  interface CookieTable {
+  interface AuiCookieTable {
     'data': any[];
   }
 }
@@ -72,45 +72,45 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLCookieCategoryElement extends Components.CookieCategory, HTMLStencilElement {}
-  var HTMLCookieCategoryElement: {
-    prototype: HTMLCookieCategoryElement;
-    new (): HTMLCookieCategoryElement;
+  interface HTMLAuiCookieCategoryElement extends Components.AuiCookieCategory, HTMLStencilElement {}
+  var HTMLAuiCookieCategoryElement: {
+    prototype: HTMLAuiCookieCategoryElement;
+    new (): HTMLAuiCookieCategoryElement;
   };
 
-  interface HTMLCookieConsentElement extends Components.CookieConsent, HTMLStencilElement {}
-  var HTMLCookieConsentElement: {
-    prototype: HTMLCookieConsentElement;
-    new (): HTMLCookieConsentElement;
+  interface HTMLAuiCookieConsentElement extends Components.AuiCookieConsent, HTMLStencilElement {}
+  var HTMLAuiCookieConsentElement: {
+    prototype: HTMLAuiCookieConsentElement;
+    new (): HTMLAuiCookieConsentElement;
   };
 
-  interface HTMLCookieContentBlockerElement extends Components.CookieContentBlocker, HTMLStencilElement {}
-  var HTMLCookieContentBlockerElement: {
-    prototype: HTMLCookieContentBlockerElement;
-    new (): HTMLCookieContentBlockerElement;
+  interface HTMLAuiCookieContentBlockerElement extends Components.AuiCookieContentBlocker, HTMLStencilElement {}
+  var HTMLAuiCookieContentBlockerElement: {
+    prototype: HTMLAuiCookieContentBlockerElement;
+    new (): HTMLAuiCookieContentBlockerElement;
   };
 
-  interface HTMLCookieTableElement extends Components.CookieTable, HTMLStencilElement {}
-  var HTMLCookieTableElement: {
-    prototype: HTMLCookieTableElement;
-    new (): HTMLCookieTableElement;
+  interface HTMLAuiCookieTableElement extends Components.AuiCookieTable, HTMLStencilElement {}
+  var HTMLAuiCookieTableElement: {
+    prototype: HTMLAuiCookieTableElement;
+    new (): HTMLAuiCookieTableElement;
   };
   interface HTMLElementTagNameMap {
-    'cookie-category': HTMLCookieCategoryElement;
-    'cookie-consent': HTMLCookieConsentElement;
-    'cookie-content-blocker': HTMLCookieContentBlockerElement;
-    'cookie-table': HTMLCookieTableElement;
+    'aui-cookie-category': HTMLAuiCookieCategoryElement;
+    'aui-cookie-consent': HTMLAuiCookieConsentElement;
+    'aui-cookie-content-blocker': HTMLAuiCookieContentBlockerElement;
+    'aui-cookie-table': HTMLAuiCookieTableElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface CookieCategory {
+  interface AuiCookieCategory {
     'data'?: any[];
     'index'?: number;
     'onCheckCategory'?: Function;
     'onOpenCloseCategory'?: Function;
   }
-  interface CookieConsent {
+  interface AuiCookieConsent {
     /**
     * This will add a classname to the component wrapper
     */
@@ -140,7 +140,7 @@ declare namespace LocalJSX {
     */
     'preferencesSaved'?: Function;
   }
-  interface CookieContentBlocker {
+  interface AuiCookieContentBlocker {
     /**
     * This will add a classname to the component wrapper
     */
@@ -158,15 +158,15 @@ declare namespace LocalJSX {
     */
     'title'?: string;
   }
-  interface CookieTable {
+  interface AuiCookieTable {
     'data'?: any[];
   }
 
   interface IntrinsicElements {
-    'cookie-category': CookieCategory;
-    'cookie-consent': CookieConsent;
-    'cookie-content-blocker': CookieContentBlocker;
-    'cookie-table': CookieTable;
+    'aui-cookie-category': AuiCookieCategory;
+    'aui-cookie-consent': AuiCookieConsent;
+    'aui-cookie-content-blocker': AuiCookieContentBlocker;
+    'aui-cookie-table': AuiCookieTable;
   }
 }
 
@@ -176,10 +176,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'cookie-category': LocalJSX.CookieCategory & JSXBase.HTMLAttributes<HTMLCookieCategoryElement>;
-      'cookie-consent': LocalJSX.CookieConsent & JSXBase.HTMLAttributes<HTMLCookieConsentElement>;
-      'cookie-content-blocker': LocalJSX.CookieContentBlocker & JSXBase.HTMLAttributes<HTMLCookieContentBlockerElement>;
-      'cookie-table': LocalJSX.CookieTable & JSXBase.HTMLAttributes<HTMLCookieTableElement>;
+      'aui-cookie-category': LocalJSX.AuiCookieCategory & JSXBase.HTMLAttributes<HTMLAuiCookieCategoryElement>;
+      'aui-cookie-consent': LocalJSX.AuiCookieConsent & JSXBase.HTMLAttributes<HTMLAuiCookieConsentElement>;
+      'aui-cookie-content-blocker': LocalJSX.AuiCookieContentBlocker & JSXBase.HTMLAttributes<HTMLAuiCookieContentBlockerElement>;
+      'aui-cookie-table': LocalJSX.AuiCookieTable & JSXBase.HTMLAttributes<HTMLAuiCookieTableElement>;
     }
   }
 }

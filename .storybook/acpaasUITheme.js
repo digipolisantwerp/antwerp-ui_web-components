@@ -32,6 +32,6 @@ export default create({
   inputBorderRadius: 0,
 
   brandTitle: 'ACPaaS UI',
-  brandUrl: 'https://acpaas-ui.digipolis.be',
+  // brandUrl: 'https://acpaas-ui.digipolis.be',
   brandImage: logo,
 });

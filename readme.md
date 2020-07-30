@@ -43,10 +43,10 @@ Take a look at the component documentation below to learn how to use each compon
 
 This library contains the following components:
 
-| Name               | Documentation                                                |
-| ------------------ | ------------------------------------------------------------ |
-| content-blocker    | [Documentation](./src/components/cookie-consent/readme.md)   |
-| cookie-consent     | [Documentation](./src/components/content-blocker/readme.md)  |
+| Name                          | Documentation                                                    |
+| ----------------------------- | ---------------------------------------------------------------- |
+| aui-cookie-content-blocker    | [Documentation](./src/components/cookie-consent/readme.md)       |
+| aui-cookie-consent            | [Documentation](./src/components/content-blocker/readme.md)      |
 
 
 ## Styling
@@ -109,10 +109,10 @@ import notes from './readme.md';
 
 storiesOf('Component', module)
   .add('Small', () => `
-    <my-component type="small"></my-component>
+    <aui-component type="small"></aui-component>
   `, { notes })
   .add('Large', () => `
-    <my-component type="large"></my-component>
+    <aui-component type="large"></aui-component>
   `, { notes });
 ```
 

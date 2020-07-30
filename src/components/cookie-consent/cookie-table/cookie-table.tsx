@@ -1,7 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-	tag: 'cookie-table',
+	tag: 'aui-cookie-table',
 })
 export class CookieTable {
 	@Prop() data: any[];

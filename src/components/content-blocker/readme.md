@@ -1,7 +1,7 @@
 # cookie-content-blocker
 
 ```html
-<cookie-content-blocker title="Video kon niet getoond worden" icon="Je moet je cookievoorkeuren aanpassen om deze video te kunnen afspelen" icon="fa-youtube"></cookie-content-blocker>
+<aui-cookie-content-blocker title="Video kon niet getoond worden" icon="Je moet je cookievoorkeuren aanpassen om deze video te kunnen afspelen" icon="fa-youtube"></aui-cookie-content-blocker>
 ```
 
 <!-- Auto Generated Below -->

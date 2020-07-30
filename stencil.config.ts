@@ -13,8 +13,8 @@ export const config: Config = {
 	bundles: [
 		{
 			components: [
-				'cookie-consent',
-				'cookie-content-blocker'
+				'aui-cookie-consent',
+				'aui-cookie-content-blocker'
 			]
 		}
 	],

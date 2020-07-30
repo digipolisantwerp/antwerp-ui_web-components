@@ -4,6 +4,6 @@ import notes from './readme.md';
 
 storiesOf('CookieConsent', module)
 	.addDecorator(withKnobs)
-	.add('cookie-consent', () => `
-		<cookie-consent></cookie-consent>
+	.add('Cookie consent', () => `
+		<aui-cookie-consent></aui-cookie-consent>
 	`, { notes })
