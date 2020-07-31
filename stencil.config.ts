@@ -8,7 +8,9 @@ export const config: Config = {
 		{ src: 'services' }
 	],
 	plugins: [
-		sass()
+		sass({
+			includePaths: ["./node_modules/"],
+		})
 	],
 	bundles: [
 		{

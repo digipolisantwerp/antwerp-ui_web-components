@@ -12,7 +12,7 @@ export class ContentBlocker {
 	/** Name of the FontAwesome icon you want to show */
 	@Prop() icon: string;
 	/** This will add a classname to the component wrapper */
-	@Prop() branding: string = "aui";
+	@Prop() branding: string = 'aui';
 
 	openCookiePreferences() {
 		const cookieConsentElement = document.querySelector('aui-cookie-consent');
