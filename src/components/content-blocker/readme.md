@@ -11,7 +11,7 @@
 
 | Property      | Attribute     | Description                                        | Type     | Default     |
 | ------------- | ------------- | -------------------------------------------------- | -------- | ----------- |
-| `branding`    | `branding`    | This will add a classname to the component wrapper | `string` | `"aui"`     |
+| `branding`    | `branding`    | This will add a classname to the component wrapper | `string` | `'aui'`     |
 | `description` | `description` | The description                                    | `string` | `undefined` |
 | `icon`        | `icon`        | Name of the FontAwesome icon you want to show      | `string` | `undefined` |
 | `title`       | `title`       | The title                                          | `string` | `undefined` |

@@ -16,13 +16,13 @@
 
 ### Used by
 
- - [cookie-category](../cookie-category)
+ - [aui-cookie-category](../cookie-category)
 
 ### Graph
 ```mermaid
 graph TD;
-  cookie-category --> cookie-table
-  style cookie-table fill:#f9f,stroke:#333,stroke-width:4px
+  aui-cookie-category --> aui-cookie-table
+  style aui-cookie-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

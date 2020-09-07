@@ -109,14 +109,14 @@ Read the docs [here](./docs/cookie-consent-react.md)
 
 ### Depends on
 
-- [cookie-category](cookie-category)
+- [aui-cookie-category](cookie-category)
 
 ### Graph
 ```mermaid
 graph TD;
-  cookie-consent --> cookie-category
-  cookie-category --> cookie-table
-  style cookie-consent fill:#f9f,stroke:#333,stroke-width:4px
+  aui-cookie-consent --> aui-cookie-category
+  aui-cookie-category --> aui-cookie-table
+  style aui-cookie-consent fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

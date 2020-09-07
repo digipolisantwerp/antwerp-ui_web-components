@@ -45,8 +45,8 @@ This library contains the following components:
 
 | Name                          | Documentation                                                    |
 | ----------------------------- | ---------------------------------------------------------------- |
-| aui-cookie-content-blocker    | [Documentation](./src/components/cookie-consent/readme.md)       |
-| aui-cookie-consent            | [Documentation](./src/components/content-blocker/readme.md)      |
+| aui-cookie-consent            | [Documentation](./src/components/cookie-consent/readme.md)       |
+| aui-cookie-content-blocker    | [Documentation](./src/components/content-blocker/readme.md)      |
 
 
 ## Styling
