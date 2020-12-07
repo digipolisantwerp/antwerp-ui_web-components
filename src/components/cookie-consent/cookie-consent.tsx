@@ -90,7 +90,7 @@ export class CookieConsent {
 		})
 		Cookies.set('cookiepreferences_' + this.currentEnvironment,
 			cookiePreferences,
-			{ domain: this.domain || window.location.hostname, expires: 7 }
+			{ domain: this.domain || window.location.hostname, expires: 365 }
 		);
 		if (this.preferencesSaved) {
 			this.preferencesSaved(cookiePreferences);
