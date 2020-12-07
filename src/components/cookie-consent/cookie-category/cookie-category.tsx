@@ -10,13 +10,22 @@ export class CookieCategory {
 	@Prop() onOpenCloseCategory: Function;
 	@Prop() onCheckCategory: Function;
 
+	onKeyPress = (e, index) => {
+    const enter =
+      e.key === "Enter" ||
+      e.which === 13;
+    if (enter) {
+      this.onOpenCloseCategory(index);
+    }
+  };
+
 	loadCategoryItem = (item) => {
 		return (
 			<div class="category-item">
-				<div class="category-item-nav u-margin-bottom-xs" onClick={() => this.onOpenCloseCategory(this.index)}>
+				<div class="category-item-nav u-margin-bottom-xs">
 					<div class="row">
 						<div class="col-xs-6 category-item-name">
-							<h2 class="h6"><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
+							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, this.index)} ><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
 						</div>
 						<div class="col-xs-6 u-text-right">
 							<div class="a-input">
