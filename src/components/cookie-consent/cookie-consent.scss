@@ -46,10 +46,14 @@
   }
 
 	.category-item-name {
-    padding-left: 1.5rem;
-
-		h2 {
-      line-height: 1.5;
+		button {
+			font-family: "Antwerpen Regular";
+			line-height: 1.1;
+			font-size: 1.2rem;
+			font-weight: 500;
+			text-decoration: none;
+   		margin: 0;
+			color: #081f2c;
 
 			.fa {
 				font-size: 1.5rem;

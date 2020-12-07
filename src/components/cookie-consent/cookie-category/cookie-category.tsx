@@ -16,7 +16,7 @@ export class CookieCategory {
 				<div class="category-item-nav u-margin-bottom-xs" onClick={() => this.onOpenCloseCategory(this.index)}>
 					<div class="row">
 						<div class="col-xs-6 category-item-name">
-							<h2 class="h6"><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
+							<button class="a-button a-button--transparent a-button--tiny"><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</button>
 						</div>
 						<div class="col-xs-6 u-text-right">
 							<div class="a-input">
