@@ -34,6 +34,8 @@ export class CookieConsent {
 	@State() checkedCategories: any[];
 	@State() currentEnvironment: string;
 
+	modalRef!: HTMLElement;
+
 	componentWillLoad() {
 		this.loadConfig();
 		this.checkEnvironment();
@@ -124,6 +126,7 @@ export class CookieConsent {
 
 	handleShowPreferences() {
 		this.showPreferences = true;
+		this.modalRef.focus();
 	}
 
 	savePreferences() {
@@ -163,7 +166,7 @@ export class CookieConsent {
 			{
       'u-text-right': !isMobile,
       'u-text-center': isMobile
-    });
+		});
 
 		return (
 			<div>
@@ -194,7 +197,7 @@ export class CookieConsent {
 			<Host class={this.branding} role='alert'>
 				<div class={overlayClass}>
 					<div class='m-overlay__inner cookieconsent'>
-						<div class="m-modal m-modal--large">
+						<div class="m-modal m-modal--large" tabindex={0} ref={(el) => this.modalRef = el as HTMLElement}>
 							<div class="m-modal__content">
 								{!this.showPreferences ? (
 									<div>
