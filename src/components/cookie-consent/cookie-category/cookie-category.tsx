@@ -10,12 +10,20 @@ export class CookieCategory {
 	@Prop() onOpenCloseCategory: Function;
 	@Prop() onCheckCategory: Function;
 
-	onKeyPress = (e, index) => {
+	onKeyPress = (e, target, index) => {
     const enter =
       e.key === "Enter" ||
       e.which === 13;
     if (enter) {
-      this.onOpenCloseCategory(index);
+			switch(target) {
+				case "category":
+					this.onOpenCloseCategory(index)
+					break;
+				case "toggle":
+					e.target.checked = !e.target.checked;
+					this.onCheckCategory(index, e);
+					break;
+			}
     }
   };
 
@@ -25,7 +33,7 @@ export class CookieCategory {
 				<div class="category-item-nav u-margin-bottom-xs">
 					<div class="row">
 						<div class="col-xs-6 category-item-name">
-							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, this.index)} ><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
+							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)} ><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
 						</div>
 						<div class="col-xs-6 u-text-right">
 							<div class="a-input">
@@ -42,7 +50,8 @@ export class CookieCategory {
 												id={"switch-" + item.name}
 												role="switch"
 												checked={item.enabled}
-												onChange={(e) => this.onCheckCategory(this.index, e)} />
+												onChange={(e) => this.onCheckCategory(this.index, e)}
+												onKeyDown={(e) => this.onKeyPress(e, "toggle", this.index)} />
 											<label htmlFor={"switch-" + item.name}>
 												<span class="u-screen-reader-only">Toggle switch</span>
 											</label>
