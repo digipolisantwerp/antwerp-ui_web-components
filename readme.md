@@ -92,7 +92,7 @@ Please read our [contribution guide](CONTRIBUTING.md).
 
 ## Support
 
-Jasper Van Proeyen (<jasper.vanproeyen@digipolis.be>)
+Wim Vanhorenbeeck (<wim.vanhorenbeeck@digipolis.be>)
 
 
 ## License
