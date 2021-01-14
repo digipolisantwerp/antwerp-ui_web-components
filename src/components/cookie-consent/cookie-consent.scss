@@ -114,12 +114,6 @@
 		flex: auto;
 	}
 }
-@include at($screen-sm) {
-  .m-modal {
-		margin-top: 50%;
-	}
-}
-
 
 // Flexboxgrid classes
 .row {
