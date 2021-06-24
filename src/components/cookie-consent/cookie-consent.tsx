@@ -88,6 +88,7 @@ export class CookieConsent {
 			cookiePreferences = JSON.parse(Cookies.get('cookiepreferences_' + this.currentEnvironment));
 		}
 		this.checkedCategories.forEach(function (category) {
+			// Make sure cookies from the same subdomain are left untouched
 			const index = cookiePreferences.map(e => e.category).indexOf(category.name);
 			if(index > -1) {
 				cookiePreferences[index].accepted = (type === 'all' ? true : category.enabled);
