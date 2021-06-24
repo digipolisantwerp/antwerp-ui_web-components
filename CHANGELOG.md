@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [1.0.3] - 2021-06-24
+
+### Fixed
+- `cookie-consent` Fixed an issue where the component would crash when cookies from other subdomains were not recognized
+- `cookie-consent` Fixed an issue where cookies from other subdomains could be deleted
+
+
 ## [1.0.2] - 2021-01-14
 
 ### Changed
@@ -25,7 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.2...1.0.3
 [1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.1...1.0.2
 [1.0.1]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.0...1.0.1
 [1.0.0]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.0
