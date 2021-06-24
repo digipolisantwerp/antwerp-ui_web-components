@@ -84,11 +84,19 @@ export class CookieConsent {
 
 	setCookie(type?: string) {
 		let cookiePreferences = [];
+		if (Cookies.get('cookiepreferences_' + this.currentEnvironment)) {
+			cookiePreferences = JSON.parse(Cookies.get('cookiepreferences_' + this.currentEnvironment));
+		}
 		this.checkedCategories.forEach(function (category) {
-			cookiePreferences = [...cookiePreferences, {
-				category: category.name,
-				accepted: (type === 'all' ? true : category.enabled)
-			}];
+			const index = cookiePreferences.map(e => e.category).indexOf(category.name);
+			if(index > -1) {
+				cookiePreferences[index].accepted = (type === 'all' ? true : category.enabled);
+			} else {
+				cookiePreferences = [...cookiePreferences, {
+					category: category.name,
+					accepted: (type === 'all' ? true : category.enabled)
+				}];
+			}
 		})
 		Cookies.set('cookiepreferences_' + this.currentEnvironment,
 			cookiePreferences,
@@ -100,17 +108,20 @@ export class CookieConsent {
 	}
 
 	checkCookie() {
+		let hideWindow = false;
 		if (Cookies.get('cookiepreferences_' + this.currentEnvironment)) {
-			this.hidden = true;
 			let cookiePreferences = JSON.parse(Cookies.get('cookiepreferences_' + this.currentEnvironment));
-
 			let checkedCategories = [...this.checkedCategories];
 			cookiePreferences.forEach(function (cookiePref) {
 				let index = checkedCategories.findIndex((obj => obj.name === cookiePref.category));
-				checkedCategories[index].enabled = cookiePref.accepted;
+				if(checkedCategories[index]){
+					hideWindow = true;
+					checkedCategories[index].enabled = cookiePref.accepted;
+				}
 			});
 			this.checkedCategories = checkedCategories;
 		}
+		this.hidden = hideWindow;
 	}
 
 	openCookiePreferences() {
