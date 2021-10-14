@@ -185,7 +185,7 @@ export class CookieConsent {
 				<div class="m-modal__body">
 					<div class={classNames('row', { 'u-margin-bottom': isMobile})}>
 						<div class="col-xs-12 col-md-8">
-							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
+							<h1 class="h3 u-margin-bottom u-margin-right">Soorten cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
 							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
