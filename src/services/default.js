@@ -1,7 +1,8 @@
 export const cookieConfig = {
 	"title": "Welkom!",
 	"intro": "Antwerpen.be maakt gebruik van cookies. Aan de hand van die cookies verzamelt en analyseert Antwerpen.be informatie over uw bezoek. Genieten van een optimale A-ervaring? Bevestig met alle cookies toestaan. Stel voorkeuren in en bepaal welke informatie u met Antwerpen deelt. Houd er rekening mee dat bepaalde media enkel beschikbaar zijn indien u de cookies ervan aanvaardt. Antwerpen.be bewaart cookievoorkeuren. U kan ze aanpassen via cookies beheren. Meer weten? Raadpleeg onze <a href='https://www.antwerpen.be/nl/info/5e9d5a6cd93901b20b3a2b82/cookiebeleid' target='_blank'>Cookieverklaring</a>. Antwerpen.be waardeert uw vertrouwen en wenst u een verrijkende surfervaring toe!",
-	"cookieConfig": [
+  "nonBlocking": true,
+  "cookieConfig": [
 		{
 			"name": "Noodzakelijk",
 			"showSwitch": false,
@@ -66,7 +67,7 @@ export const cookieConfig = {
 							"name": "_gat",
 							"duration": "1 min"
 						}
-						
+
 					]
 				},
 				{

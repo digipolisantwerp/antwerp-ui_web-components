@@ -67,6 +67,20 @@ export namespace Components {
   interface AuiCookieTable {
     'data': any[];
   }
+  interface AuiIcon {
+    /**
+    * ARIA Label
+    */
+    'ariaLabel'?: string;
+    /**
+    * Branding
+    */
+    'branding'?: string;
+    /**
+    * The icon name (eg: )
+    */
+    'name': string;
+  }
 }
 
 declare global {
@@ -95,11 +109,18 @@ declare global {
     prototype: HTMLAuiCookieTableElement;
     new (): HTMLAuiCookieTableElement;
   };
+
+  interface HTMLAuiIconElement extends Components.AuiIcon, HTMLStencilElement {}
+  var HTMLAuiIconElement: {
+    prototype: HTMLAuiIconElement;
+    new (): HTMLAuiIconElement;
+  };
   interface HTMLElementTagNameMap {
     'aui-cookie-category': HTMLAuiCookieCategoryElement;
     'aui-cookie-consent': HTMLAuiCookieConsentElement;
     'aui-cookie-content-blocker': HTMLAuiCookieContentBlockerElement;
     'aui-cookie-table': HTMLAuiCookieTableElement;
+    'aui-icon': HTMLAuiIconElement;
   }
 }
 
@@ -161,12 +182,27 @@ declare namespace LocalJSX {
   interface AuiCookieTable {
     'data'?: any[];
   }
+  interface AuiIcon {
+    /**
+    * ARIA Label
+    */
+    'ariaLabel'?: string;
+    /**
+    * Branding
+    */
+    'branding'?: string;
+    /**
+    * The icon name (eg: )
+    */
+    'name'?: string;
+  }
 
   interface IntrinsicElements {
     'aui-cookie-category': AuiCookieCategory;
     'aui-cookie-consent': AuiCookieConsent;
     'aui-cookie-content-blocker': AuiCookieContentBlocker;
     'aui-cookie-table': AuiCookieTable;
+    'aui-icon': AuiIcon;
   }
 }
 
@@ -180,6 +216,7 @@ declare module "@stencil/core" {
       'aui-cookie-consent': LocalJSX.AuiCookieConsent & JSXBase.HTMLAttributes<HTMLAuiCookieConsentElement>;
       'aui-cookie-content-blocker': LocalJSX.AuiCookieContentBlocker & JSXBase.HTMLAttributes<HTMLAuiCookieContentBlockerElement>;
       'aui-cookie-table': LocalJSX.AuiCookieTable & JSXBase.HTMLAttributes<HTMLAuiCookieTableElement>;
+      'aui-icon': LocalJSX.AuiIcon & JSXBase.HTMLAttributes<HTMLAuiIconElement>;
     }
   }
 }
