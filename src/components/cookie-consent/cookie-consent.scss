@@ -39,6 +39,19 @@
 	.category-item-nav {
 		padding: 0.625rem 0.25rem 0.625rem 0.25rem;
 		cursor: pointer;
+
+    .a-switch {
+      display: flex;
+      align-items: center;
+
+      button {
+        width: 50px;
+      }
+
+      .a-switch__label {
+        flex: auto;
+      }
+    }
   }
 
 	.category-item-name {
@@ -100,22 +113,9 @@
 	}
 }
 
-.a-switch {
-  display: flex !important;
-  align-items: center;
-
-  button {
-    width: 50px;
-  }
-
-	.a-switch__label {
-		flex: auto;
-	}
-}
-
 .m-cookie-consent {
   position: fixed;
   bottom: 0;
-  z-index: 999;
+  z-index: layer('overlay');
   width: 100%;
 }
