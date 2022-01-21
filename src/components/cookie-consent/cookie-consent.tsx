@@ -55,7 +55,7 @@ export class CookieConsent {
 		this.checkCookie();
 		this.hidden = !newValue;
 		this.showPreferences = newValue;
-    this.openedManually = true;
+		this.openedManually = true;
 	}
 
 	checkExcludedPaths() {
@@ -134,7 +134,8 @@ export class CookieConsent {
 		this.showPreferences = true;
 	}
 
-	handleAcceptAll() {
+	handleAcceptAll(e) {
+		e.preventDefault()
 		this.setCookie('all');
 		this.hidden = true;
 		this.openPreferences = false;
@@ -148,11 +149,11 @@ export class CookieConsent {
 	handleHidePreferences() {
 		this.showPreferences = false;
 
-    if (this.openedManually) {
-      this.hidden = true;
-      this.openedManually = false;
-      this.openPreferences = false;
-    }
+		if (this.openedManually) {
+			this.hidden = true;
+			this.openedManually = false;
+			this.openPreferences = false;
+		}
 	}
 
 	savePreferences() {
@@ -189,30 +190,30 @@ export class CookieConsent {
 	loadPreferences = () => {
 		const acceptCookiesWrapperClass = classNames(
 			'accept-all-cookies-wrapper',
-			'col-xs-4',
+			'col-xs-12 col-sm-4',
 			{
-      'u-text-right': !isMobile,
-      'u-text-center': isMobile
+			'u-text-right': !isMobile,
+			'u-text-center': isMobile
 		});
 
 		return (
 			<div>
 				<div class="m-modal__body">
-					<div class={classNames('row', { 'u-margin-bottom': isMobile})}>
-						<div class="col-xs-8">
-							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
+					<div class="row u-margin-bottom">
+						<div class="col-xs-12 col-sm-8">
+							<h1 class="h3 u-margin-bottom-xs">Soorten cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
-							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
+							<a role="button" href="#" class="u-margin-bottom-xs" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies toestaan</a>
 						</div>
 					</div>
 					{this.showCategories()}
 				</div>
-				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
+				<div class="m-modal__footer u-margin-top">
 					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
 					{this.configData.nonBlocking && (
-           		<button class='a-button a-button--transparent' onClick={() => this.handleHidePreferences()}>Annuleren</button>
-          )}
+					 		<button class='a-button a-button--transparent' onClick={() => this.handleHidePreferences()}>Annuleren</button>
+					)}
 				</div>
 			</div>
 		)
@@ -227,8 +228,8 @@ export class CookieConsent {
 		if (this.configData.nonBlocking && !this.showPreferences && !this.hidden) {
 			return (
 				<Host class={this.branding} role='alert'>
-					<div class="m-cookie-consent u-bg-light">
-						<div class="u-container u-margin-top-lg u-margin-bottom-lg">
+					<div class="m-cookie-consent">
+						<div class="u-container u-margin-top u-margin-bottom">
 							<div class="row">
 								<div class="col-xs-12 col-md-9">
 									<div class="u-margin-right">
@@ -243,7 +244,7 @@ export class CookieConsent {
 									>Noodzakelijke cookies</button>
 									<button
 										class='a-button a-button--block u-margin-bottom-xs'
-										onClick={() => this.handleAcceptAll()}
+										onClick={(e) => this.handleAcceptAll(e)}
 									>Alle cookies toestaan</button>
 									<button
 										class='a-button a-button--transparent a-button--block'
@@ -272,7 +273,7 @@ export class CookieConsent {
 										<div class="m-modal__footer">
 											<button
 												class='a-button u-margin-right'
-												onClick={() => this.handleAcceptAll()}
+												onClick={(e) => this.handleAcceptAll(e)}
 											>Alle cookies toestaan</button>
 											<button
 											class={'a-button a-button--transparent'}
