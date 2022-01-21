@@ -1,7 +1,7 @@
 import { Icon } from './icon';
 
 describe('icon', () => {
-  it('builds', () => {
-    expect(new Icon()).toBeTruthy();
-  });
+	it('builds', () => {
+		expect(new Icon()).toBeTruthy();
+	});
 });
