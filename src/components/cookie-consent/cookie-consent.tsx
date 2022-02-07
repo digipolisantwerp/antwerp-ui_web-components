@@ -33,6 +33,7 @@ export class CookieConsent {
 	@State() showPreferences: boolean = false;
 	@State() checkedCategories: any[];
 	@State() currentEnvironment: string;
+	@State() openedManually: boolean = false;
 
 	modalRef!: HTMLElement;
 
@@ -54,6 +55,7 @@ export class CookieConsent {
 		this.checkCookie();
 		this.hidden = !newValue;
 		this.showPreferences = newValue;
+		this.openedManually = true;
 	}
 
 	checkExcludedPaths() {
@@ -87,6 +89,7 @@ export class CookieConsent {
 		if (Cookies.get('cookiepreferences_' + this.currentEnvironment)) {
 			cookiePreferences = JSON.parse(Cookies.get('cookiepreferences_' + this.currentEnvironment));
 		}
+
 		this.checkedCategories.forEach(function (category) {
 			// Make sure cookies from the same subdomain are left untouched
 			const index = cookiePreferences.map(e => e.category).indexOf(category.name);
@@ -103,6 +106,7 @@ export class CookieConsent {
 			cookiePreferences,
 			{ domain: this.domain || window.location.hostname, expires: 365 }
 		);
+
 		if (this.preferencesSaved) {
 			this.preferencesSaved(cookiePreferences);
 		}
@@ -130,7 +134,8 @@ export class CookieConsent {
 		this.showPreferences = true;
 	}
 
-	handleAcceptAll() {
+	handleAcceptAll(e) {
+		e.preventDefault()
 		this.setCookie('all');
 		this.hidden = true;
 		this.openPreferences = false;
@@ -138,7 +143,17 @@ export class CookieConsent {
 
 	handleShowPreferences() {
 		this.showPreferences = true;
-		this.modalRef.focus();
+		setTimeout(() => this.modalRef.focus());
+	}
+
+	handleHidePreferences() {
+		this.showPreferences = false;
+
+		if (this.openedManually) {
+			this.hidden = true;
+			this.openedManually = false;
+			this.openPreferences = false;
+		}
 	}
 
 	savePreferences() {
@@ -152,14 +167,16 @@ export class CookieConsent {
 	}
 
 	showCategories = () => {
-		const checkCategory = (key, e) => {
+		const checkCategory = (key: string) => {
 			this.checkedCategories = [...this.checkedCategories];
-			this.checkedCategories[key].enabled = e.target.checked;
+			this.checkedCategories[key].enabled = !this.checkedCategories[key].enabled;
 		}
-		const handleOpenCloseCategory = (key) => {
+
+		const handleOpenCloseCategory = (key: string) => {
 			this.checkedCategories = [...this.checkedCategories];
 			this.checkedCategories[key].open = !this.checkedCategories[key].open;
 		}
+
 		return this.checkedCategories.map((category, key) =>
 			<aui-cookie-category
 				data={category}
@@ -173,28 +190,30 @@ export class CookieConsent {
 	loadPreferences = () => {
 		const acceptCookiesWrapperClass = classNames(
 			'accept-all-cookies-wrapper',
-			'col-xs-12',
-			'col-md-4',
+			'col-xs-12 col-sm-4',
 			{
-      'u-text-right': !isMobile,
-      'u-text-center': isMobile
+			'u-text-right': !isMobile,
+			'u-text-center': isMobile
 		});
 
 		return (
 			<div>
 				<div class="m-modal__body">
-					<div class={classNames('row', { 'u-margin-bottom': isMobile})}>
-						<div class="col-xs-12 col-md-8">
-							<h1 class="h3 u-margin-bottom u-margin-right">Soorten Cookies</h1>
+					<div class="row u-margin-bottom">
+						<div class="col-xs-12 col-sm-8">
+							<h1 class="h3 u-margin-bottom-xs">Soorten cookies</h1>
 						</div>
 						<div class={acceptCookiesWrapperClass}>
-							<button class="a-button a-button--transparent a-button--tiny" onClick={() => this.handleAcceptAll()}>Alle cookies toestaan</button>
+							<a role="button" href="#" class="u-margin-bottom-xs" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies toestaan</a>
 						</div>
 					</div>
 					{this.showCategories()}
 				</div>
-				<div class={classNames('m-modal__footer', { 'u-margin-top-lg': isMobile})}>
+				<div class="m-modal__footer u-margin-top">
 					<button class='a-button' onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
+					{this.configData.nonBlocking && (
+					 		<button class='a-button a-button--transparent' onClick={() => this.handleHidePreferences()}>Annuleren</button>
+					)}
 				</div>
 			</div>
 		)
@@ -202,9 +221,43 @@ export class CookieConsent {
 
 	render() {
 		const overlayClass = classNames('m-overlay',{
-      'is-active': !this.hidden,
-      'mobile': isMobile
+			'is-active': !this.hidden,
+			'mobile': isMobile
 		});
+
+		if (this.configData.nonBlocking && !this.showPreferences && !this.hidden) {
+			return (
+				<Host class={this.branding} role='alert'>
+					<div class="m-cookie-consent">
+						<div class="u-container u-margin-top u-margin-bottom">
+							<div class="row">
+								<div class="col-xs-12 col-md-9">
+									<div class="u-margin-right">
+										<h1 class='h3 u-margin-bottom'>{this.configData.title}</h1>
+										<p innerHTML={this.configData.intro}></p>
+									</div>
+								</div>
+								<div class="col-xs-12 col-md-3">
+									<button
+										class='a-button a-button--block u-margin-bottom-xs'
+										onClick={() => this.savePreferences()}
+									>Noodzakelijke cookies</button>
+									<button
+										class='a-button a-button--block u-margin-bottom-xs'
+										onClick={(e) => this.handleAcceptAll(e)}
+									>Alle cookies toestaan</button>
+									<button
+										class='a-button a-button--transparent a-button--block'
+										onClick={() => this.handleShowPreferences()}
+									>Stel voorkeuren in</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</Host>
+			);
+		}
+
 		return (
 			<Host class={this.branding} role='alert'>
 				<div class={overlayClass}>
@@ -220,7 +273,7 @@ export class CookieConsent {
 										<div class="m-modal__footer">
 											<button
 												class='a-button u-margin-right'
-												onClick={() => this.handleAcceptAll()}
+												onClick={(e) => this.handleAcceptAll(e)}
 											>Alle cookies toestaan</button>
 											<button
 											class={'a-button a-button--transparent'}
@@ -228,8 +281,7 @@ export class CookieConsent {
 											>Stel voorkeuren in</button>
 										</div>
 									</div>
-								) : this.loadPreferences()
-								}
+								) : this.loadPreferences()}
 							</div>
 						</div>
 					</div>

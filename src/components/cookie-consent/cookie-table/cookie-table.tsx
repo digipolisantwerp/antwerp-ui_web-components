@@ -31,19 +31,21 @@ export class CookieTable {
 
 	render() {
 		return (
-			<table class="a-table a-table--primary u-margin-bottom-xs">
-				<thead>
-					<tr>
-						<th>Cookie</th>
-						<th>Type</th>
-						<th>Duur</th>
-						<th>Omschrijving</th>
-					</tr>
-				</thead>
-				<tbody>
-					{this.loadCookieTableBody(this.data)}
-				</tbody>
-			</table>
+			<div class="a-table__wrapper-responsive">
+				<table class="a-table a-table--primary">
+					<thead>
+						<tr>
+							<th>Cookie</th>
+							<th>Type</th>
+							<th>Duur</th>
+							<th>Omschrijving</th>
+						</tr>
+					</thead>
+					<tbody>
+						{this.loadCookieTableBody(this.data)}
+					</tbody>
+				</table>
+			</div>
 		);
 	}
 }

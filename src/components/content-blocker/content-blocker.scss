@@ -1,4 +1,5 @@
 @import '@a-ui/core/src/styles/quarks';
+@import '@a-ui/flexboxgrid/dist/flexboxgrid';
 
 :host {
   display: block;
@@ -10,45 +11,9 @@
 }
 
 .content-blocker {
-	background-color: $grey-lighter;
 	border: 1px solid $border-color;
-	padding: 1rem 1.5rem;
 
-  .fa {
+  .ai {
 		font-size: 2.5rem;
 	}
-}
-
-// Flexboxgrid classes
-.row {
-	box-sizing: border-box;
-	display: flex;
-	flex: 0 1 auto;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-right: -0.5rem;
-	margin-left: -0.5rem;
-}
-
-.col-xs-12,
-.col-xs-4 {
-	box-sizing: border-box;
-	flex: 0 0 auto;
-	padding-right: 0.5rem;
-	padding-left: 0.5rem;
-}
-
-.col-xs-12 {
-	flex-basis: 100%;
-	max-width: 100%;
-}
-
-.col-xs-4 {
-	flex-basis: 33.33333333%;
-	max-width: 33.33333333%;
-}
-
-.center-xs {
-	justify-content: center;
-	text-align: center;
 }

@@ -11,10 +11,10 @@ export class CookieCategory {
 	@Prop() onCheckCategory: Function;
 
 	onKeyPress = (e, target, index) => {
-    const enter =
-      e.key === "Enter" ||
-      e.which === 13;
-    if (enter) {
+		const enter =
+			e.key === "Enter" ||
+			e.which === 13;
+		if (enter) {
 			switch(target) {
 				case "category":
 					this.onOpenCloseCategory(index)
@@ -24,40 +24,38 @@ export class CookieCategory {
 					this.onCheckCategory(index, e);
 					break;
 			}
-    }
-  };
+		}
+	};
 
 	loadCategoryItem = (item) => {
 		return (
-			<div class="category-item">
-				<div class="category-item-nav u-margin-bottom-xs">
+			<div class="category-item u-margin-bottom-xs">
+				<div class="category-item-nav">
 					<div class="row">
-						<div class="col-xs-6 category-item-name">
-							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)} ><span class={"fa fa-angle-" + (item.open ? "down" : "right")}></span>{item.name}</h2>
+						<div class="col-xs-12 col-sm-6 category-item-name u-margin-bottom-xs">
+							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)}>
+								<aui-icon branding="u-margin-right-xs" name={`ai-arrow-${item.open ? 'down' : 'right'}-1`}></aui-icon> {item.name}
+							</h2>
 						</div>
-						<div class="col-xs-6 u-text-right">
-							<div class="a-input">
-								<div class={item.showSwitch && "a-switch"}>
-									<label class="a-switch__label">
+						<div class="col-xs-12 col-sm-6 u-text-right">
+							{!item.showSwitch && (
+								<div class="u-flex">Altijd ingeschakeld</div>
+							)}
+
+							<div class={item.showSwitch && "a-switch"}>
+								{item.showSwitch && (
+								<button
+									class="a-switch__button"
+									id={"switch-" + item.name}
+									role="switch"
+									aria-checked={item.enabled.toString()}
+									onClick={(e) => this.onCheckCategory(this.index, e)}
+									onKeyDown={(e) => this.onKeyPress(e, "toggle", this.index)}>
+									<span class="a-switch__off">
 										{((item.showSwitch && !isMobile) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
-										{(!item.showSwitch && "Altijd ingeschakeld")}
-									</label>
-									{item.showSwitch &&
-										<div class="a-switch__toggle">
-											<input
-												type="checkbox"
-												name={"switch-" + item.name}
-												id={"switch-" + item.name}
-												role="switch"
-												checked={item.enabled}
-												onChange={(e) => this.onCheckCategory(this.index, e)}
-												onKeyDown={(e) => this.onKeyPress(e, "toggle", this.index)} />
-											<label htmlFor={"switch-" + item.name}>
-												<span class="u-screen-reader-only">Toggle switch</span>
-											</label>
-										</div>
-									}
-								</div>
+									</span>
+								</button>
+								)}
 							</div>
 						</div>
 					</div>
