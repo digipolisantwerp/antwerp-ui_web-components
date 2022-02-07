@@ -24,11 +24,11 @@ export class ContentBlocker {
 			<Host class={this.branding}>
 				<div class="content-blocker u-bg-light">
 					{this.icon &&
-            <div class="row center-xs u-margin-bottom-xs u-margin-top">
-              <div class="col-xs-4">
-                <aui-icon name={this.icon} />
-              </div>
-            </div>
+						<div class="row center-xs u-margin-bottom-xs u-margin-top">
+							<div class="col-xs-4">
+								<aui-icon name={this.icon} />
+							</div>
+						</div>
 					}
 					<div class="row center-xs u-margin-bottom-xs u-margin-top">
 						<div class="col-xs-12">

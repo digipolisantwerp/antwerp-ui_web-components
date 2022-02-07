@@ -42,7 +42,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@a-ui/core": "^4.1.0",
+        "@a-ui/core": "^5.0.0",
         "@a-ui/flexboxgrid": "^2.0.0",
         "classnames": "^2.2.6",
         "js-cookie": "^2.2.1",

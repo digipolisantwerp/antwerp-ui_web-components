@@ -14,8 +14,8 @@
 			}
 
 			td {
-        word-break: break-all;
-        hyphens: auto;
+				word-break: break-all;
+				hyphens: auto;
 			}
 	}
 }
@@ -27,7 +27,7 @@
 .accept-all-cookies-wrapper {
 	display: flex;
 	justify-content: center;
-	align-content: center;
+	align-items: flex-end;
 	flex-direction: column;
 }
 
@@ -35,47 +35,30 @@
 	display: none;
 }
 
-.category-item {
-	.category-item-nav {
-		padding: 0.625rem 0.25rem 0.625rem 0.25rem;
-		cursor: pointer;
-
-    .a-switch {
-      display: flex;
-      align-items: center;
-
-      button {
-        width: 50px;
-      }
-
-      .a-switch__label {
-        flex: auto;
-      }
-    }
-  }
-
+.category-item {-
 	.category-item-name {
 		h2 {
-      line-height: 1.5;
+			cursor: pointer;
+			line-height: 1.5;
 
 			.fa {
 				font-size: 1.5rem;
 				display: inline;
 			}
 		}
-  }
+	}
 
 	.category-item-description {
 		transition:	max-height $animation-duration $animation-easing;
 		max-height: 0;
-    overflow: hidden;
+		overflow: hidden;
 
 		td {
 			vertical-align: top;
 			font-size: .9rem;
 			display: table-cell;
 			line-height: 1.1rem;
-    }
+		}
 
 		tr {
 			td:nth-of-type(1) {
@@ -90,15 +73,15 @@
 			td:nth-of-type(4) {
 				width: 65%;
 			}
-    }
+		}
 
 		.sub-cookies {
 			border: none;
-      border-collapse: collapse;
+			border-collapse: collapse;
 
 			tr {
 				height: 1.75rem;
-        border-bottom: 1px solid $grey-light;
+				border-bottom: 1px solid $grey-light;
 
 				td {
 					padding: 0;
@@ -106,16 +89,46 @@
 				}
 			}
 		}
-  }
+	}
 
 	.category-item-description.open {
 		max-height: 500rem;
 	}
 }
 
+button.a-switch__button {
+	margin-right: 1.5rem;
+
+	&:before {
+		left: calc(100% - 1.5rem);
+	}
+
+	&:after {
+		left: 100%;
+	}
+}
+
+.u-flex {
+	align-items: center;
+	display: flex;
+	height: 1.75rem;
+	justify-content: flex-end;
+	width: 100%;
+}
+
 .m-cookie-consent {
-  position: fixed;
-  bottom: 0;
-  z-index: layer('overlay');
-  width: 100%;
+	background: #fff;
+	border-top: 1px solid $border-color;
+	bottom: 0;
+	box-shadow: $box-shadow-top;
+	max-height: 75vh;
+	overflow: auto;
+	position: fixed;
+	width: 100%;
+	z-index: layer('overlay');
+}
+
+.m-overlay__inner.cookieconsent {
+	overflow-x: hidden;
+	overflow-y: auto;
 }
