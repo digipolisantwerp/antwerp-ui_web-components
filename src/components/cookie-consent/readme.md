@@ -115,6 +115,7 @@ Read the docs [here](./docs/cookie-consent-react.md)
 ```mermaid
 graph TD;
   aui-cookie-consent --> aui-cookie-category
+  aui-cookie-category --> aui-icon
   aui-cookie-category --> aui-cookie-table
   style aui-cookie-consent fill:#f9f,stroke:#333,stroke-width:4px
 ```

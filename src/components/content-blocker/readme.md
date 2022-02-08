@@ -17,6 +17,19 @@
 | `title`       | `title`       | The title                                          | `string` | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- [aui-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  aui-cookie-content-blocker --> aui-icon
+  style aui-cookie-content-blocker fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

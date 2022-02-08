@@ -55,19 +55,21 @@ Use [one of our brandings](https://github.com/a-ui/) to adhere to the styling gu
 
 ```html
 // Antwerp core branding
-<link rel="stylesheet" href="https://cdn.antwerpen.be/core_branding_scss/4.1.1/main.min.css">
+<link rel="stylesheet" href="https://cdn.antwerpen.be/core_branding_scss/5.0.2/main.min.css">
 
 // Digipolis
+// Note: this styling version for now only works with v1.x.x of the component
 <link rel="stylesheet" href="https://cdn.antwerpen.be/digipolis_branding_scss/4.1.1/main.min.css">
 
 // ACPaaS
+// Note: this styling version for now only works with v1.x.x of the component
 <link rel="stylesheet" href="https://cdn.antwerpen.be/acpaas_branding_scss/4.1.1/main.min.css">
 ```
 
 If needed, you can add a branding-compatible [flexbox grid layout system](https://github.com/a-ui/core_flexboxgrid_scss):
 
 ```html
-<link rel="stylesheet" href="https://cdn.antwerpen.be/core_flexboxgrid_scss/1.0.1/flexboxgrid.min.css">
+<link rel="stylesheet" href="https://cdn.antwerpen.be/core_flexboxgrid_scss/2.0.0/flexboxgrid.min.css">
 ```
 
 For other styling-related things, like e.g. favicons, [check out GitHub](https://github.com/a-ui/).
