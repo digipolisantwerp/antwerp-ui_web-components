@@ -19,10 +19,6 @@ export class CookieCategory {
 				case "category":
 					this.onOpenCloseCategory(index)
 					break;
-				case "toggle":
-					e.target.checked = !e.target.checked;
-					this.onCheckCategory(index, e);
-					break;
 			}
 		}
 	};
@@ -49,8 +45,7 @@ export class CookieCategory {
 									id={"switch-" + item.name}
 									role="switch"
 									aria-checked={item.enabled.toString()}
-									onClick={(e) => this.onCheckCategory(this.index, e)}
-									onKeyDown={(e) => this.onKeyPress(e, "toggle", this.index)}>
+									onClick={() => this.onCheckCategory(this.index)}>
 									<span class="a-switch__off">
 										{((item.showSwitch && !isMobile) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
 									</span>
