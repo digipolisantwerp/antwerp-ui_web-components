@@ -47,8 +47,10 @@ export class CookieConsent {
 	}
 
 	componentDidLoad() {
-		const focusTrap = createFocusTrap(this.componentRef);
-		setTimeout(() => focusTrap.activate());
+		if(!this.configData.nonBlocking) {
+			const focusTrap = createFocusTrap(this.componentRef);
+			setTimeout(() => focusTrap.activate());
+		}
 	}
 
 	@Watch('config')
