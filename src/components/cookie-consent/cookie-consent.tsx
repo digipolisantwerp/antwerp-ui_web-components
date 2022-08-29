@@ -1,6 +1,7 @@
 import { Component, Prop, Host, State, Watch, h } from '@stencil/core';
 import Cookies from 'js-cookie';
 import { isMobile } from 'react-device-detect';
+import { createFocusTrap } from 'focus-trap';
 import classNames from 'classnames';
 
 
@@ -35,6 +36,7 @@ export class CookieConsent {
 	@State() currentEnvironment: string;
 	@State() openedManually: boolean = false;
 
+	componentRef!: HTMLElement;
 	modalRef!: HTMLElement;
 
 	componentWillLoad() {
@@ -42,6 +44,13 @@ export class CookieConsent {
 		this.checkEnvironment();
 		this.checkCookie();
 		this.checkExcludedPaths();
+	}
+
+	componentDidLoad() {
+		if(!this.configData.nonBlocking) {
+			const focusTrap = createFocusTrap(this.componentRef);
+			setTimeout(() => focusTrap.activate());
+		}
 	}
 
 	@Watch('config')
@@ -259,7 +268,7 @@ export class CookieConsent {
 		}
 
 		return (
-			<Host class={this.branding} role='alert'>
+			<Host class={this.branding} tabindex="-1" role='dialog' aria-label="cookiemelding" aria-modal="true" ref={(el) => this.componentRef = el as HTMLElement}>
 				<div class={overlayClass}>
 					<div class='m-overlay__inner cookieconsent'>
 						<div class="m-modal m-modal--large" tabindex={0} ref={(el) => this.modalRef = el as HTMLElement}>
