@@ -236,7 +236,7 @@ export class CookieConsent {
 
 		if (this.configData.nonBlocking && !this.showPreferences && !this.hidden) {
 			return (
-				<Host class={this.branding} role='alert'>
+				<Host class={this.branding}>
 					<div class="m-cookie-consent">
 						<div class="u-container u-margin-top u-margin-bottom">
 							<div class="row">
