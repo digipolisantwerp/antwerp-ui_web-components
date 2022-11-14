@@ -46,7 +46,7 @@ export class ContentBlocker {
 					</div>
 					<div class="row center-xs">
 						<div class="col-xs-12">
-							<button class="a-button a-button--transparent u-margin-bottom" onClick={() => this.openCookiePreferences()}>Open cookie instellingen</button>
+							<button class="a-button a-button--transparent u-margin-bottom" onClick={() => this.openCookiePreferences()}>Open cookie-instellingen</button>
 						</div>
 					</div>
 				</div>
