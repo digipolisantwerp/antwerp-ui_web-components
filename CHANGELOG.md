@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## Unreleased
 
 
+## [2.0.1] - 2022-02-08
+
+### Fixed
+- `cookie-consent` Added correct focus
+- `cookie-consent` Removed alert role for better accessibility
+- `cookie-consent` Made some copy changes
+
+
 ## [2.0.0] - 2022-02-08
 
 ### Added
