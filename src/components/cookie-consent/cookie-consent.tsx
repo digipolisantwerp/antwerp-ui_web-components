@@ -47,7 +47,7 @@ export class CookieConsent {
 	}
 
 	componentDidLoad() {
-		if(!this.configData.nonBlocking) {
+		if(!this.configData.nonBlocking && !this.hidden) {
 			const focusTrap = createFocusTrap(this.componentRef);
 			setTimeout(() => focusTrap.activate());
 		}

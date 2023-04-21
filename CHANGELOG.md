@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+### Changed
+- Upgraded Stencil to v3
+- Upgraded most packages to latest versions
+
+### Fixed
+- Fixed a focus-trap console error when cookies are already set
+
 
 ## [2.0.1] - 2022-02-08
 
@@ -50,7 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v2.0.0...2.0.1
 [2.0.0]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.3...2.0.0
 [1.0.3]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.2...1.0.3
 [1.0.2]: https://github.com/digipolisantwerp/acpaas-ui_web-components/compare/v1.0.1...1.0.2
