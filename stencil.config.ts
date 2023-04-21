@@ -7,7 +7,7 @@ export const config: Config = {
 	plugins: [
 		sass({
 			includePaths: ["./node_modules/"],
-		})
+    })
 	],
 	bundles: [
 		{
