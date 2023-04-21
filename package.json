@@ -26,8 +26,8 @@
         "@a-ui/core": "^5.0.2",
         "@a-ui/flexboxgrid": "^2.0.0",
         "@babel/core": "^7.8.4",
-        "@stencil/core": "1.8.7",
-        "@stencil/sass": "^1.1.1",
+        "@stencil/core": "^2.22.3",
+        "@stencil/sass": "^2.0.4",
         "@storybook/addon-knobs": "^5.3.19",
         "@storybook/addon-notes": "^5.3.19",
         "@storybook/addon-viewport": "^5.3.19",
@@ -49,8 +49,8 @@
         "js-cookie": "^2.2.1",
         "react-device-detect": "^1.11.14"
     },
-		"engines" : {
-				"npm" : ">=8.0.0",
-				"node" : ">=18.0.0"
-		}
+    "engines": {
+        "npm": ">=8.0.0",
+        "node": ">=18.0.0"
+    }
 }
