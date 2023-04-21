@@ -1,4 +1,4 @@
-import { Component, Prop, Host, State, Watch, h } from '@stencil/core';
+import { Component, Prop, Host, Listen, State, Watch, h } from '@stencil/core';
 import Cookies from 'js-cookie';
 import { isMobile } from 'react-device-detect';
 import { createFocusTrap } from 'focus-trap';
@@ -65,6 +65,30 @@ export class CookieConsent {
 		this.hidden = !newValue;
 		this.showPreferences = newValue;
 		this.openedManually = true;
+	}
+
+	@Listen('checkCategory')
+	handleCheckCategory(event: CustomEvent<number>) {
+		const key = event.detail;
+		const newCategories = this.checkedCategories.map((cat, i) => {
+			if(key === i) {
+				return {...cat, enabled: !cat.enabled};
+			}
+			return cat;
+		})
+		this.checkedCategories = [...newCategories];
+	}
+
+	@Listen('openCloseCategory')
+	handleOpenCloseCategory(event: CustomEvent<number>) {
+		const key = event.detail;
+		const newCategories = this.checkedCategories.map((cat, i) => {
+			if(key === i) {
+				return {...cat, open: !cat.open};
+			}
+			return cat;
+		})
+		this.checkedCategories = [...newCategories];
 	}
 
 	checkExcludedPaths() {
@@ -176,22 +200,11 @@ export class CookieConsent {
 	}
 
 	showCategories = () => {
-		const checkCategory = (key: string) => {
-			this.checkedCategories = [...this.checkedCategories];
-			this.checkedCategories[key].enabled = !this.checkedCategories[key].enabled;
-		}
-
-		const handleOpenCloseCategory = (key: string) => {
-			this.checkedCategories = [...this.checkedCategories];
-			this.checkedCategories[key].open = !this.checkedCategories[key].open;
-		}
 
 		return this.checkedCategories.map((category, key) =>
 			<aui-cookie-category
 				data={category}
 				index={key}
-				onCheckCategory={checkCategory}
-				onOpenCloseCategory={handleOpenCloseCategory}
 			></aui-cookie-category>
 		)
 	}

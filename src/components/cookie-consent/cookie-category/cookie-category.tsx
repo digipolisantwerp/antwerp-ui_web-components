@@ -1,5 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
-import { isMobile } from 'react-device-detect';
+import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
 
 @Component({
 	tag: 'aui-cookie-category',
@@ -7,8 +6,8 @@ import { isMobile } from 'react-device-detect';
 export class CookieCategory {
 	@Prop() data: any[];
 	@Prop() index: number;
-	@Prop() onOpenCloseCategory: Function;
-	@Prop() onCheckCategory: Function;
+	@Event() openCloseCategory: EventEmitter<number>;
+	@Event() checkCategory: EventEmitter<number>;
 
 	onKeyPress = (e, target, index) => {
 		const enter =
@@ -17,7 +16,7 @@ export class CookieCategory {
 		if (enter) {
 			switch(target) {
 				case "category":
-					this.onOpenCloseCategory(index)
+					this.openCloseCategory.emit(index)
 					break;
 			}
 		}
@@ -29,7 +28,7 @@ export class CookieCategory {
 				<div class="category-item-nav">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 category-item-name u-margin-bottom-xs">
-							<h2 class="h6" role="button" tabindex={0} onClick={() => this.onOpenCloseCategory(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)}>
+							<h2 class="h6" role="button" tabindex={0} onClick={() => this.openCloseCategory.emit(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)}>
 								<aui-icon branding="u-margin-right-xs" name={`ai-arrow-${item.open ? 'down' : 'right'}-1`}></aui-icon> {item.name}
 							</h2>
 						</div>
@@ -45,9 +44,9 @@ export class CookieCategory {
 									id={"switch-" + item.name}
 									role="switch"
 									aria-checked={item.enabled.toString()}
-									onClick={() => this.onCheckCategory(this.index)}>
+									onClick={() => this.checkCategory.emit(this.index)}>
 									<span class="a-switch__off">
-										{((item.showSwitch && !isMobile) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
+										{((item.showSwitch) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
 									</span>
 								</button>
 								)}

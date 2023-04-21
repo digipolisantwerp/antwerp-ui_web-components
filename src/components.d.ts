@@ -9,8 +9,6 @@ export namespace Components {
     interface AuiCookieCategory {
         "data": any[];
         "index": number;
-        "onCheckCategory": Function;
-        "onOpenCloseCategory": Function;
     }
     interface AuiCookieConsent {
         /**
@@ -78,6 +76,10 @@ export namespace Components {
         "name": string;
     }
 }
+export interface AuiCookieCategoryCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAuiCookieCategoryElement;
+}
 declare global {
     interface HTMLAuiCookieCategoryElement extends Components.AuiCookieCategory, HTMLStencilElement {
     }
@@ -121,8 +123,8 @@ declare namespace LocalJSX {
     interface AuiCookieCategory {
         "data"?: any[];
         "index"?: number;
-        "onCheckCategory"?: Function;
-        "onOpenCloseCategory"?: Function;
+        "onCheckCategory"?: (event: AuiCookieCategoryCustomEvent<number>) => void;
+        "onOpenCloseCategory"?: (event: AuiCookieCategoryCustomEvent<number>) => void;
     }
     interface AuiCookieConsent {
         /**
