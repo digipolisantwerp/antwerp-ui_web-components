@@ -1,4 +1,4 @@
-import { ContentBlocker } from './content-blocker';
+import { ContentBlocker } from './cookie-content-blocker';
 
 describe('cookie-content-blocker', () => {
 	it('builds', () => {

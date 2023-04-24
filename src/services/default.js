@@ -143,7 +143,7 @@ export const cookieConfig = {
 							"duration": "1.5 jaar"
 						}
 					]
-				},
+				}
 			]
 		}
 	]

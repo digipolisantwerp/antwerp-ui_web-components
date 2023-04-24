@@ -2,16 +2,16 @@ import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
 	tag: 'aui-cookie-content-blocker',
-	styleUrl: 'content-blocker.scss'
+	styleUrl: 'cookie-content-blocker.scss'
 })
 export class ContentBlocker {
-	/** The title */
+	/** The content blocker title */
 	@Prop() title: string;
-	/** The description */
+	/** A paragraph text to explain the content blocker title */
 	@Prop() description: string;
-	/** Name of the FontAwesome icon you want to show */
+	/** The icon name (eg: ai-close) */
 	@Prop() icon: string;
-	/** This will add a classname to the component wrapper */
+	/** Extra CSS class(es) to add */
 	@Prop() branding: string = 'aui';
 
 	openCookiePreferences() {

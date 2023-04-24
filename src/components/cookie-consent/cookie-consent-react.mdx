@@ -1,9 +1,14 @@
+import { Meta } from '@storybook/blocks';
+import * as CookieConsentStory from './cookie-consent.stories';
+
+<Meta title="Components/Cookie Consent/React" />
+
 # Cookie Consent in React
 
-## Issue with webcomponents and react
+## Issues
+
 **following the official stenciljs docs:**
 The largest deficiencies that React currently has when it comes to working with standard HTML Custom Elements is that properties that contain non-scalar data (that is, data that is not a string or number) are not passed properly and custom events are not handled properly.
-
 
 ## Example of a custom cookie consent wrapper component
 
@@ -11,8 +16,8 @@ The largest deficiencies that React currently has when it comes to working with 
 npm i react-stencil-wrapper
 ```
 
+CookieConsent.js
 
-### CookieConsent.js
 ```JSX
 import React from 'react';
 import { StencilComponentWrapper } from 'react-stencil-wrapper';
@@ -32,7 +37,7 @@ const CookieConsent = ({ }) => {
 export default CookieConsent;
 ```
 
-### App.js
+App.js
 
 ```JSX
 import React from 'react';
@@ -49,6 +54,3 @@ const App = ({ children }) => (
 
 export default App;
 ```
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*

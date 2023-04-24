@@ -14,7 +14,7 @@ import { Environment } from '../../services/environment.js';
 	styleUrl: 'cookie-consent.scss'
 })
 export class CookieConsent {
-	/** This will add a classname to the component wrapper */
+	/** Extra CSS class(es) to add */
 	@Prop() branding: string = 'aui';
 	/** Configuration of your cookie consent window */
 	@Prop() config: string;

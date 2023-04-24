@@ -5,11 +5,11 @@ import classNames from 'classnames';
 	tag: 'aui-icon',
 })
 export class Icon {
-	/** The icon name (eg: ) */
+	/** The icon name (eg: ai-close) */
 	@Prop() name: string;
-	/** ARIA Label */
+	/** The ARIA label */
 	@Prop() ariaLabel?: string;
-	/** Branding */
+	/** Additional CSS class(es) */
 	@Prop() branding?: string;
 
 	/**
