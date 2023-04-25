@@ -9,7 +9,7 @@ export default {
 		return icon;
 	},
 	argTypes: {
-		title: {
+		message: {
 			control: { type: 'text' },
       table: {
         type: { summary: 'text' },
@@ -48,7 +48,7 @@ export default {
 
 export const Example = {
   args: {
-		title: 'Dit item kan niet getoond worden',
+		message: 'Dit item kan niet getoond worden',
 		description: 'De cookies voor YouTube dienen geaccepteerd te worden om de inhoud van dit filmpje te kunnen zien',
     icon: 'ai-video-player',
   },

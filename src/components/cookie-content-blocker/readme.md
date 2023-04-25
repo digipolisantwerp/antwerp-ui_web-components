@@ -12,7 +12,7 @@
 | `branding`    | `branding`    | Extra CSS class(es) to add                            | `string` | `'aui'`     |
 | `description` | `description` | A paragraph text to explain the content blocker title | `string` | `undefined` |
 | `icon`        | `icon`        | The icon name (eg: ai-close)                          | `string` | `undefined` |
-| `title`       | `title`       | The content blocker title                             | `string` | `undefined` |
+| `message`     | `message`     | The content blocker title                             | `string` | `undefined` |
 
 
 ## Dependencies

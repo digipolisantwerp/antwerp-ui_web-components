@@ -56,7 +56,7 @@ export namespace Components {
         /**
           * The content blocker title
          */
-        "title": string;
+        "message": string;
     }
     interface AuiCookieTable {
         "data": any[];
@@ -172,7 +172,7 @@ declare namespace LocalJSX {
         /**
           * The content blocker title
          */
-        "title"?: string;
+        "message"?: string;
     }
     interface AuiCookieTable {
         "data"?: any[];
