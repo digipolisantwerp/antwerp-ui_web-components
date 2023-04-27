@@ -24,37 +24,33 @@ export class CookieCategory {
 
 	loadCategoryItem = (item) => {
 		return (
-			<div class="category-item u-margin-bottom-xs">
-				<div class="category-item-nav">
-					<div class="row">
-						<div class="col-xs-12 col-sm-6 category-item-name u-margin-bottom-xs">
-							<h2 class="h6" role="button" tabindex={0} onClick={() => this.openCloseCategory.emit(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)}>
-								<aui-icon branding="u-margin-right-xs" name={`ai-arrow-${item.open ? 'down' : 'right'}-1`}></aui-icon> {item.name}
-							</h2>
-						</div>
-						<div class="col-xs-12 col-sm-6 u-text-right">
-							{!item.showSwitch && (
-								<div class="u-flex">Altijd ingeschakeld</div>
-							)}
+			<div class="m-cookie-consent__category u-margin-top">
+        <div class="m-cookie-consent__category-title">
+          <h2 class="h6" role="button" tabindex={0} onClick={() => this.openCloseCategory.emit(this.index)} onKeyDown={(e) => this.onKeyPress(e, "category", this.index)}>
+            <aui-icon name={`ai-arrow-${item.open ? 'down' : 'right'}-1`}></aui-icon> {item.name}
+          </h2>
+          <div class="u-text-right">
+            {!item.showSwitch && (
+              <p>Altijd ingeschakeld</p>
+            )}
 
-							<div class={item.showSwitch && "a-switch"}>
-								{item.showSwitch && (
-								<button
-									class="a-switch__button"
-									id={"switch-" + item.name}
-									role="switch"
-									aria-checked={item.enabled.toString()}
-									onClick={() => this.checkCategory.emit(this.index)}>
-									<span class="a-switch__off">
-										{((item.showSwitch) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
-									</span>
-								</button>
-								)}
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class={"category-item-description " + (item.open ? "open" : "")}>
+            <div class={item.showSwitch && "a-switch"}>
+              {item.showSwitch && (
+              <button
+                class="a-switch__button"
+                id={"switch-" + item.name}
+                role="switch"
+                aria-checked={item.enabled.toString()}
+                onClick={() => this.checkCategory.emit(this.index)}>
+                <span class="a-switch__off">
+                  {((item.showSwitch) && ((item.enabled ? "In" : "Uit") + "geschakeld"))}
+                </span>
+              </button>
+              )}
+            </div>
+          </div>
+        </div>
+				<div class={"m-cookie-consent__category-detail u-margin-top-xs " + (item.open ? "is-open" : "")}>
 					<p class="u-margin-bottom-xs">{item.description}</p>
 					{item.cookies &&
 						<aui-cookie-table data={item}></aui-cookie-table>

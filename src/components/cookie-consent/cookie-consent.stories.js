@@ -1,5 +1,3 @@
-import { cookieConfig } from '../../services/default.js';
-
 export default {
 	title: 'Components/Cookie Consent',
 	component: 'aui-cookie-consent',

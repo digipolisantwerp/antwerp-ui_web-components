@@ -15,7 +15,7 @@ export class CookieTable {
 				<td>
 					{cookie.description}
 					{cookie.subCookies &&
-						<table class="sub-cookies u-margin-top-xs">
+						<table class="a-table__sub-table u-margin-top-xs">
 							{cookie.subCookies.map((subCookie) =>
 								<tr>
 									<td>{subCookie.name}</td>
@@ -32,7 +32,7 @@ export class CookieTable {
 	render() {
 		return (
 			<div class="a-table__wrapper-responsive">
-				<table class="a-table a-table--primary">
+				<table class="a-table a-table--small a-table--primary">
 					<thead>
 						<tr>
 							<th>Cookie</th>

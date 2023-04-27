@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@a-ui/core": "^5.0.2",
-    "@a-ui/flexboxgrid": "^2.0.0",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
     "@stencil/core": "^3.2.1",

@@ -23,11 +23,13 @@
 ### Depends on
 
 - [aui-cookie-category](cookie-category)
+- [aui-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   aui-cookie-consent --> aui-cookie-category
+  aui-cookie-consent --> aui-icon
   aui-cookie-category --> aui-icon
   aui-cookie-category --> aui-cookie-table
   style aui-cookie-consent fill:#f9f,stroke:#333,stroke-width:4px
