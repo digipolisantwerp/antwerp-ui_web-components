@@ -42,12 +42,14 @@ export class CookieCategory {
             )}
           </div>
         </div>
-        <div class={"m-cookie-consent__category-detail u-margin-top-xs " + (item.open ? "is-open" : "")}>
-          <p class="u-margin-bottom-xs">{item.description}</p>
-          {item.cookies &&
-            <aui-cookie-table data={item}></aui-cookie-table>
-          }
-        </div>
+        {item.open && (
+          <div class="m-cookie-consent__category-detail u-margin-top-xs">
+            <p class="u-margin-bottom-xs">{item.description}</p>
+            {item.cookies &&
+              <aui-cookie-table data={item}></aui-cookie-table>
+            }
+          </div>
+        )}
       </div>
     );
   }

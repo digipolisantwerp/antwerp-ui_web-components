@@ -59,7 +59,6 @@ export class CookieConsent {
 
   @Watch('openPreferences')
   watchHandler(newValue: boolean) {
-    console.log('COOOKIE!');
     this.checkCookie();
     this.hidden = !newValue;
     this.showPreferences = newValue;

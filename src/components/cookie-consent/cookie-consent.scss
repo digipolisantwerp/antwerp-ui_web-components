@@ -1,8 +1,9 @@
 @use 'sass:math';
 @import '@a-ui/core/src/styles/quarks';
 
-.accepted {
-  display: none;
+.m-overlay__inner {
+  width: 100%;
+  max-width: calc(1.5rem * 25);
 }
 
 .m-cookie-consent {
@@ -43,13 +44,8 @@
 }
 
 .m-cookie-consent__category-detail {
-  height: 0;
   overflow: hidden;
   padding-left: $spacer;
-
-  &.is-open {
-    height: auto;
-  }
 
   .a-table-responsive-wrapper table {
     >tbody>tr>td,

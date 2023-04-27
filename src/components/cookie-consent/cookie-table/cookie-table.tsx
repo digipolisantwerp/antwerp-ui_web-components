@@ -1,10 +1,32 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Listen, Prop, State, h } from '@stencil/core';
+import classNames from 'classnames';
 
 @Component({
   tag: 'aui-cookie-table',
 })
 export class CookieTable {
   @Prop() data: any[];
+
+  @State() leftShadow: boolean = false;
+  @State() rightShadow: boolean = false;
+
+  tableRef!: HTMLElement;
+
+  @Listen('resize', { target: 'window' })
+  handleResize() {
+    this.handleScroll();
+  }
+
+  componentDidLoad() {
+    this.handleScroll();
+  }
+
+  handleScroll() {
+    const el = this.tableRef.scrollLeft;
+    const width = this.tableRef.scrollWidth - this.tableRef.clientWidth;
+    this.leftShadow = (el <= 0) ? false : true;
+    this.rightShadow = (el < width) ? true : false;
+  }
 
   loadCookieTableBody = (data) => {
     return data.cookies.map((cookie) =>
@@ -15,7 +37,7 @@ export class CookieTable {
         <td>
           {cookie.description}
           {cookie.subCookies &&
-            <table class="a-table a-table--open u-margin-top-3xs">
+            <table class="a-table a-table--open u-margin-top-xxs">
               {cookie.subCookies.map((subCookie) =>
                 <tr class="is-condensed">
                   <td class="is-condensed">{subCookie.name}</td>
@@ -30,9 +52,14 @@ export class CookieTable {
   }
 
   render() {
+    const tableClasses = classNames('a-table-responsive-wrapper',{
+      'has-shadow-left': this.leftShadow,
+      'has-shadow-right': this.rightShadow,
+    });
+
     return (
-      <div class="a-table-responsive-wrapper">
-        <div class="a-table-scrollable-wrapper">
+      <div class={tableClasses}>
+        <div class="a-table-scrollable-wrapper" onScroll={() => this.handleScroll()} ref={(el) => this.tableRef = el as HTMLElement}>
           <table class="a-table a-table--small a-table--primary">
             <thead>
               <tr>
