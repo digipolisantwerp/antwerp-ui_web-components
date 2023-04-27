@@ -2,7 +2,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'aui-cookie-content-blocker',
-  styleUrl: 'cookie-content-blocker.scss'
+  styleUrl: 'cookie-content-blocker.scss',
 })
 export class ContentBlocker {
   /** The content blocker title */

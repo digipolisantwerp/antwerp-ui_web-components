@@ -1,7 +1,14 @@
+@use 'sass:math';
 @import '@a-ui/core/src/styles/quarks';
 
 .accepted {
   display: none;
+}
+
+.m-cookie-consent {
+  button {
+    white-space: nowrap;
+  }
 }
 
 .m-cookie-consent__category-title {
@@ -44,7 +51,7 @@
     height: auto;
   }
 
-  .a-table__wrapper-responsive table {
+  .a-table-responsive-wrapper table {
     >tbody>tr>td,
     >tfoot>tr>td,
     >thead>tr>td {
@@ -54,6 +61,7 @@
     }
 
     td {
+      -webkit-hyphens: auto;
       hyphens: auto;
 
       &:before {
@@ -67,17 +75,8 @@
     }
   }
 
-  .a-table__sub-table {
-    border-collapse: collapse;
-    width: 100%;
-
-    tr:last-child {
-      border-bottom: none;
-    }
-
-    td {
-      padding: $spacer-xs / 2 0;
-    }
+  tr.is-condensed {
+    height: var(--spacer-l);
   }
 }
 
@@ -85,7 +84,7 @@
   background: #fff;
   border-top: 1px solid $border-color;
   bottom: 0;
-  box-shadow: $box-shadow-top;
+  box-shadow: 0 -$spacer 0 var(--box-shadow-color);
   max-height: 50vh;
   overflow: auto;
   position: fixed;
@@ -112,9 +111,5 @@
   @include at($screen-md) {
     flex-direction: column;
     justify-content: flex-end;
-  }
-
-  button {
-    white-space: nowrap;
   }
 }

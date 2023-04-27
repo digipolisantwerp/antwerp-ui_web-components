@@ -9,7 +9,7 @@ import { Environment } from '../../services/environment.js';
 
 @Component({
   tag: 'aui-cookie-consent',
-  styleUrl: 'cookie-consent.scss'
+  styleUrl: 'cookie-consent.scss',
 })
 export class CookieConsent {
   /** Extra CSS class(es) to add */
@@ -59,6 +59,7 @@ export class CookieConsent {
 
   @Watch('openPreferences')
   watchHandler(newValue: boolean) {
+    console.log('COOOKIE!');
     this.checkCookie();
     this.hidden = !newValue;
     this.showPreferences = newValue;
@@ -272,7 +273,7 @@ export class CookieConsent {
       <Host class={this.branding} tabindex="-1" role="dialog" aria-label="Cookies" aria-modal="true" ref={(el) => this.componentRef = el as HTMLElement}>
         <div class={overlayClass}>
           <div class='m-overlay__inner'>
-            <div class="m-modal m-modal--large" tabindex={0} ref={(el) => this.modalRef = el as HTMLElement}>
+            <div class="m-modal m-modal--l" tabindex={0} ref={(el) => this.modalRef = el as HTMLElement}>
               <div class="m-modal__content">
                 { !this.showPreferences ? this.showCookieConsentDashboard() : this.showCookieConsentPreferences() }
               </div>

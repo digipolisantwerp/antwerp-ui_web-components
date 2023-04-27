@@ -15,6 +15,13 @@
 | `message`     | `message`     | The content blocker title                             | `string` | `undefined` |
 
 
+## CSS Custom Properties
+
+| Name                                                                                                            | Description |
+| --------------------------------------------------------------------------------------------------------------- | ----------- |
+| `--screen-xxl = max-width of u-container + width of official logo * 2 + space between logo and u-container * 2` |             |
+
+
 ## Dependencies
 
 ### Depends on
