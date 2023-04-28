@@ -60,7 +60,7 @@ export class CookieTable {
     return (
       <div class={tableClasses}>
         <div class="a-table-scrollable-wrapper" onScroll={() => this.handleScroll()} ref={(el) => this.tableRef = el as HTMLElement}>
-          <table class="a-table a-table--small a-table--primary">
+          <table class="a-table">
             <thead>
               <tr>
                 <th>Cookie</th>
