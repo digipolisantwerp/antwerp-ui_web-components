@@ -7,8 +7,18 @@
 }
 
 .m-cookie-consent {
-  button {
-    white-space: nowrap;
+
+  .m-modal__footer {
+    flex-wrap: wrap;
+    gap: $spacer-xs;
+
+    .a-button:not(:first-child) {
+      white-space: nowrap;
+
+      @include at($screen-xs) {
+        margin-left: 0;
+      }
+    }
   }
 }
 

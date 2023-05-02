@@ -214,8 +214,9 @@ export class CookieConsent {
           <p class="u-margin-bottom" innerHTML={this.configData.intro}></p>
         </div>
         <div class="m-modal__footer">
-          <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies toestaan</button>
-          <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Stel voorkeuren in</button>
+          <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies aanvaarden</button>
+          <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Optionele cookies weigeren</button>
+          <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Voorkeuren instellen</button>
         </div>
       </div>
     )
@@ -259,8 +260,8 @@ export class CookieConsent {
               </div>
               <div class="m-cookie-consent__buttons">
                 <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies toestaan</button>
-                <button class="a-button" onClick={() => this.savePreferences()}>Alleen noodzakelijke cookies</button>
-                <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Stel voorkeuren in</button>
+                <button class="a-button" onClick={() => this.savePreferences()}>Alleen noodzakelijke cookies toestaan</button>
+                <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Je voorkeuren instellen</button>
               </div>
             </div>
           </div>
