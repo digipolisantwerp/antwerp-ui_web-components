@@ -18,13 +18,6 @@
 | `preferencesSaved` | --                 | Runs when new cookie preferences are saved                                                                                  | `Function` | `undefined` |
 
 
-## CSS Custom Properties
-
-| Name                                                                                                            | Description |
-| --------------------------------------------------------------------------------------------------------------- | ----------- |
-| `--screen-xxl = max-width of u-container + width of official logo * 2 + space between logo and u-container * 2` |             |
-
-
 ## Dependencies
 
 ### Depends on

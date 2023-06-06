@@ -112,6 +112,7 @@
 .m-cookie-consent__buttons {
   display: flex;
   flex-wrap: wrap;
+  white-space: nowrap;
   gap: $spacer-xs;
 
   @include at($screen-md) {
