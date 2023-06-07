@@ -1,0 +1,11 @@
+@import '@a-ui/core/src/styles/quarks';
+
+:host {
+  display: block;
+}
+
+.m-card {
+  &.m-card--gray {
+    background-color: $gray-100;
+  }
+}

@@ -1,4 +1,4 @@
-# cookie-category
+# aui-cookie-category
 
 
 
@@ -7,12 +7,18 @@
 
 ## Properties
 
-| Property              | Attribute | Description | Type       | Default     |
-| --------------------- | --------- | ----------- | ---------- | ----------- |
-| `data`                | --        |             | `any[]`    | `undefined` |
-| `index`               | `index`   |             | `number`   | `undefined` |
-| `onCheckCategory`     | --        |             | `Function` | `undefined` |
-| `onOpenCloseCategory` | --        |             | `Function` | `undefined` |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `data`   | --        |             | `any[]`  | `undefined` |
+| `index`  | `index`   |             | `number` | `undefined` |
+
+
+## Events
+
+| Event               | Description | Type                  |
+| ------------------- | ----------- | --------------------- |
+| `checkCategory`     |             | `CustomEvent<number>` |
+| `openCloseCategory` |             | `CustomEvent<number>` |
 
 
 ## Dependencies

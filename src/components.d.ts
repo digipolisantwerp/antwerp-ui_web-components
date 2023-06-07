@@ -12,7 +12,7 @@ export namespace Components {
     }
     interface AuiCookieConsent {
         /**
-          * This will add a classname to the component wrapper
+          * Extra CSS class(es) to add
          */
         "branding": string;
         /**
@@ -42,36 +42,36 @@ export namespace Components {
     }
     interface AuiCookieContentBlocker {
         /**
-          * This will add a classname to the component wrapper
+          * Extra CSS class(es) to add
          */
         "branding": string;
         /**
-          * The description
+          * A paragraph text to explain the content blocker title
          */
         "description": string;
         /**
-          * Name of the FontAwesome icon you want to show
+          * The icon name (eg: ai-close)
          */
         "icon": string;
         /**
-          * The title
+          * The content blocker title
          */
-        "title": string;
+        "message": string;
     }
     interface AuiCookieTable {
         "data": any[];
     }
     interface AuiIcon {
         /**
-          * ARIA Label
+          * The ARIA label
          */
         "ariaLabel"?: string;
         /**
-          * Branding
+          * Additional CSS class(es)
          */
         "branding"?: string;
         /**
-          * The icon name (eg: )
+          * The icon name (eg: ai-close)
          */
         "name": string;
     }
@@ -128,7 +128,7 @@ declare namespace LocalJSX {
     }
     interface AuiCookieConsent {
         /**
-          * This will add a classname to the component wrapper
+          * Extra CSS class(es) to add
          */
         "branding"?: string;
         /**
@@ -158,36 +158,36 @@ declare namespace LocalJSX {
     }
     interface AuiCookieContentBlocker {
         /**
-          * This will add a classname to the component wrapper
+          * Extra CSS class(es) to add
          */
         "branding"?: string;
         /**
-          * The description
+          * A paragraph text to explain the content blocker title
          */
         "description"?: string;
         /**
-          * Name of the FontAwesome icon you want to show
+          * The icon name (eg: ai-close)
          */
         "icon"?: string;
         /**
-          * The title
+          * The content blocker title
          */
-        "title"?: string;
+        "message"?: string;
     }
     interface AuiCookieTable {
         "data"?: any[];
     }
     interface AuiIcon {
         /**
-          * ARIA Label
+          * The ARIA label
          */
         "ariaLabel"?: string;
         /**
-          * Branding
+          * Additional CSS class(es)
          */
         "branding"?: string;
         /**
-          * The icon name (eg: )
+          * The icon name (eg: ai-close)
          */
         "name"?: string;
     }
