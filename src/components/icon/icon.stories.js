@@ -1,13 +1,46 @@
-import { storiesOf } from '@storybook/html';
-import notes from './readme.md';
+export default {
+	title: 'Components/Icon',
+	component: 'aui-icon',
+	render: ({ ...args }) => {
+		const icon = document.createElement(`aui-icon`);
+		for (const [key, value] of Object.entries(args)) {
+			icon.setAttribute(key, value);
+		}
+		return icon;
+	},
+	argTypes: {
+		name: {
+      control: { type: 'select' },
+      options: ['ai-close', 'ai-a11y1', 'ai-alert-triangle', 'ai-arrow-right-1', 'ai-arrow-down-1'],
+      table: {
+        type: { summary: 'text' },
+        defaultValue: { summary: '' }
+      },
+      description: 'The icon name (eg: ai-close)',
+    },
+		'aria-label': {
+			control: { type: 'text' },
+      table: {
+        type: { summary: 'text' },
+        defaultValue: { summary: '' }
+      },
+      description: 'The ARIA label',
+		},
+		branding: {
+			control: { type: 'text' },
+      table: {
+        type: { summary: 'text' },
+        defaultValue: { summary: '' }
+      },
+      description: 'Additional CSS class(es)',
+		},
+	}
+};
 
-storiesOf('Icon', module)
-	.add('Default', () => `
-		<aui-icon name="ai-wench-1"></aui-icon>
-	`, { notes })
-	.add('With ariaLabel', () => `
-		<aui-icon name="ai-wench-1" aria-label="Wrench icon"></aui-icon>
-	`, { notes })
-	.add('With custom branding', () => `
-		<aui-icon name="ai-wench-1" branding="u-margin-top"></aui-icon>
-	`, { notes });
+export const Example = {
+  args: {
+    name: 'ai-close',
+    'aria-label': 'Close',
+		branding: 'h1',
+  },
+};

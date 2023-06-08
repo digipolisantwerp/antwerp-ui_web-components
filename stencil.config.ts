@@ -2,34 +2,24 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-	namespace: 'acpaas-ui',
+	namespace: 'aui-web-components',
 	srcDir: 'src',
-	copy: [
-		{ src: 'services' }
-	],
 	plugins: [
 		sass({
 			includePaths: ["./node_modules/"],
-		})
-	],
-	bundles: [
-		{
-			components: [
-				'aui-cookie-consent',
-				'aui-cookie-content-blocker'
-			]
-		}
+    })
 	],
 	outputTargets: [
 		{
-			type: 'dist'
+			type: 'dist',
+      esmLoaderPath: '../loader'
 		},
 		{
 			type: 'docs-readme'
 		},
 		{
 			type: 'www',
-			serviceWorker: null // disable service workers
+			serviceWorker: null,
 		}
 	]
 };
