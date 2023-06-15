@@ -43,7 +43,7 @@ export const cookieConfig = {
 			]
 		},
 		{
-			"name": "Analytics",
+			"name": "Analytisch",
 			"showSwitch": true,
 			"enabled": false,
 			"description": "Analytische cookies meten het websitebezoek. Deze gegevens laten ons toe om de structuur, navigatie en inhoud van onze website te verbeteren.",

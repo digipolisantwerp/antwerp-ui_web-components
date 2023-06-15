@@ -105,6 +105,13 @@
   }
 }
 
+.m-modal__top-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer-xs;
+  justify-content: space-between;
+}
+
 .m-cookie-consent__text {
   padding-bottom: $spacer;
 }

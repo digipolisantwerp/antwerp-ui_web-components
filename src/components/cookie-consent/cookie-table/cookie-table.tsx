@@ -1,11 +1,14 @@
 import { Component, Listen, Prop, State, h } from '@stencil/core';
 import classNames from 'classnames';
 
+import { TranslationsInterface } from '../cookie-consent.interface';
+
 @Component({
   tag: 'aui-cookie-table',
 })
 export class CookieTable {
   @Prop() data: any[];
+  @Prop() translations: TranslationsInterface;
 
   @State() leftShadow: boolean = false;
   @State() rightShadow: boolean = false;
@@ -63,10 +66,10 @@ export class CookieTable {
           <table class="a-table">
             <thead>
               <tr>
-                <th>Cookie</th>
-                <th>Type</th>
-                <th>Duur</th>
-                <th>Omschrijving</th>
+                <th>{this.translations.tableHeaderCookie}</th>
+                <th>{this.translations.tableHeaderType}</th>
+                <th>{this.translations.tableHeaderDuration}</th>
+                <th>{this.translations.tableHeaderDescription}</th>
               </tr>
             </thead>
             <tbody>

@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type    | Default     |
-| -------- | --------- | ----------- | ------- | ----------- |
-| `data`   | --        |             | `any[]` | `undefined` |
+| Property       | Attribute | Description | Type                    | Default     |
+| -------------- | --------- | ----------- | ----------------------- | ----------- |
+| `data`         | --        |             | `any[]`                 | `undefined` |
+| `translations` | --        |             | `TranslationsInterface` | `undefined` |
 
 
 ## Dependencies

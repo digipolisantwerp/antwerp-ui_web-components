@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `data`   | --        |             | `any[]`  | `undefined` |
-| `index`  | `index`   |             | `number` | `undefined` |
+| Property       | Attribute | Description | Type                    | Default     |
+| -------------- | --------- | ----------- | ----------------------- | ----------- |
+| `data`         | --        |             | `any[]`                 | `undefined` |
+| `index`        | `index`   |             | `number`                | `undefined` |
+| `translations` | --        |             | `TranslationsInterface` | `undefined` |
 
 
 ## Events
