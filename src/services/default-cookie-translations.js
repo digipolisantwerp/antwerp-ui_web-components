@@ -4,6 +4,7 @@ export const cookieTranslations = {
   buttonSetup: "Voorkeuren instellen",
   buttonBack: "Terug",
   textCookieTypes: "Soorten cookies",
+  textCookiePolicy: "Lees het volledige cookiebeleid",
   buttonSaveSettings: "Voorkeuren opslaan",
   tableHeaderCookie: "Cookie",
   tableHeaderType: "Type",

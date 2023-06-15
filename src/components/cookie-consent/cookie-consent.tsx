@@ -176,6 +176,13 @@ export class CookieConsent {
     this.hidden = hideWindow;
   }
 
+  checkCookiePolicy() {
+    var cookiePolicy = !!this.configData.cookiePolicy
+      ? (<p><a href={this.configData.cookiePolicy} class="has-icon-right" target="_blank">{this.translationData.textCookiePolicy}<aui-icon name="ai-navigation-next" /></a></p>)
+      : null;
+    return cookiePolicy;
+  }
+
   openCookiePreferences() {
     this.hidden = false;
     this.showPreferences = true;
@@ -260,12 +267,7 @@ export class CookieConsent {
                 {this.translationData.buttonBack}
               </a>
             </p>
-            <p>
-              <a href="#" class="has-icon-right">
-                Lees het volledige cookiebeleid
-                <aui-icon name="ai-navigation-next" />
-              </a>
-            </p>
+            {this.checkCookiePolicy()}
           </div>
           <h1 class="h3 u-margin-top u-margin-bottom">{this.translationData.textCookieTypes}</h1>
           {this.showCategories()}
