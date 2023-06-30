@@ -25,7 +25,7 @@
     <div classs="row">
       <div class="col-xs-12 col-md-8 component">
         <h5>Youtube filmpje zonder icoon:</h5>
-        <aui-cookie-content-blocker message="Dit filmpje kan niet getoond worden" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo metus, sollicitudin nec tincidunt quis, gravida et ex. Nullam blandit, quam in aliquet convallis, nisi justo rutrum odio, eu sodales nisl purus sit amet odio."></aui-cookie-content-blocker>
+        <aui-cookie-content-blocker class="change" message="Dit filmpje kan niet getoond worden" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse leo metus, sollicitudin nec tincidunt quis, gravida et ex. Nullam blandit, quam in aliquet convallis, nisi justo rutrum odio, eu sodales nisl purus sit amet odio."></aui-cookie-content-blocker>
       </div>
     </div>
     <div classs="row">
@@ -40,9 +40,32 @@
 
 </body>
 <script>
+  //Test cookie consent overrides
   const cookieConsent = document.querySelector('aui-cookie-consent');
   cookieConsent.preferencesSaved = function (params) {
     console.log(params);
+  }
+  cookieConsent.translations = {
+    buttonAccept: "Alle cookies accepteren!",
+    buttonReject: "Geen cookies voor mij!",
+    buttonSetup: "Instellingen bekijken!",
+    buttonBack: "Ga terug!",
+    textCookieTypes: "Welke cookies zijn er allemaal?!",
+    textCookiePolicy: "Cookie policy lezen!",
+    buttonSaveSettings: "Bewaren!",
+    tableHeaderCookie: "Koekje!",
+    tableHeaderType: "Soort!",
+    tableHeaderDuration: "Hoe lang!",
+    tableHeaderDescription: "Tekstje!",
+    textAlwaysOn: "Altijd aan!",
+    textOn: "Aan!",
+    textOff: "Uit!",
+  }
+
+  //Test cookie content blocker overrides
+  const cookieContentBlocker = document.querySelector('aui-cookie-content-blocker.change');
+  cookieContentBlocker.translations = {
+    buttonOpenCookieSettings: "Instellingen veranderen",
   }
   </script>
 </html>

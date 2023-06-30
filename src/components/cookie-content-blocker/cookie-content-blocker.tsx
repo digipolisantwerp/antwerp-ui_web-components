@@ -1,4 +1,6 @@
-import { Component, Prop, Host, h } from '@stencil/core';
+import { Component, Prop, Host, h, State, Watch } from '@stencil/core';
+import { TranslationsInterface } from '../cookie-consent/cookie-consent.interface';
+import { contentBlockerTranslations } from '../../services/default-cookie-translations.js';
 
 @Component({
   tag: 'aui-cookie-content-blocker',
@@ -13,6 +15,26 @@ export class ContentBlocker {
   @Prop() icon: string;
   /** Extra CSS class(es) to add */
   @Prop() branding: string = 'aui';
+  /** Set the translation strings for the content blocker */
+  @Prop() translations: TranslationsInterface;
+
+  @State() translationData: TranslationsInterface;
+
+  componentWillLoad() {
+    this.handleTranslations(this.translations);
+  }
+
+  @Watch('translations')
+  translationsChanged(newValue: TranslationsInterface) {
+    this.handleTranslations(newValue);
+  }
+
+  handleTranslations(translations) {
+    this.translationData = {
+      ...contentBlockerTranslations,
+      ...translations,
+    }
+  }
 
   openCookiePreferences() {
     const cookieConsentElement = document.querySelector('aui-cookie-consent');
@@ -29,7 +51,7 @@ export class ContentBlocker {
             }
             <h3 class="h6">{this.message}</h3>
             <p class="u-margin-bottom-xs">{this.description}</p>
-            <button class="a-button a-button--transparent" onClick={() => this.openCookiePreferences()}>Open cookie-instellingen</button>
+            <button class="a-button a-button--transparent" onClick={() => this.openCookiePreferences()}>{this.translationData.buttonOpenCookieSettings}</button>
           </div>
         </div>
       </Host>

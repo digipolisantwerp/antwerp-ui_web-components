@@ -6,7 +6,10 @@ import * as CookieConsentStory from './cookie-consent.stories';
 # Cookie Consent
 
 ```html
-<aui-cookie-consent config={configObject}></aui-cookie-consent>
+<aui-cookie-consent
+  config={configObject}
+  translations={translationsObject}
+></aui-cookie-consent>
 ```
 
 ## Properties
@@ -93,5 +96,26 @@ Example of config JSON object:
       "open": false
     }
   ]
+}
+```
+
+Example of translations JSON object:
+
+```json
+{
+  buttonAccept: "Alle cookies aanvaarden",
+  buttonReject: "Optionele cookies weigeren",
+  buttonSetup: "Voorkeuren instellen",
+  buttonBack: "Terug",
+  textCookieTypes: "Soorten cookies",
+  textCookiePolicy: "Lees het volledige cookiebeleid",
+  buttonSaveSettings: "Voorkeuren opslaan",
+  tableHeaderCookie: "Cookie",
+  tableHeaderType: "Type",
+  tableHeaderDuration: "Duur",
+  tableHeaderDescription: "Omschrijving",
+  textAlwaysOn: "Altijd ingeschakeld",
+  textOn: "Ingeschakeld",
+  textOff: "Uitgeschakeld",
 }
 ```

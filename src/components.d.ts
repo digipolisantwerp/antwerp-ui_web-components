@@ -5,10 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { TranslationsInterface } from "./components/cookie-consent/cookie-consent.interface";
+export { TranslationsInterface } from "./components/cookie-consent/cookie-consent.interface";
 export namespace Components {
     interface AuiCookieCategory {
         "data": any[];
         "index": number;
+        "translations": TranslationsInterface;
     }
     interface AuiCookieConsent {
         /**
@@ -39,6 +42,10 @@ export namespace Components {
           * Runs when new cookie preferences are saved
          */
         "preferencesSaved": Function;
+        /**
+          * Set the translation strings for the cookie consent
+         */
+        "translations": TranslationsInterface;
     }
     interface AuiCookieContentBlocker {
         /**
@@ -57,9 +64,14 @@ export namespace Components {
           * The content blocker title
          */
         "message": string;
+        /**
+          * Set the translation strings for the content blocker
+         */
+        "translations": TranslationsInterface;
     }
     interface AuiCookieTable {
         "data": any[];
+        "translations": TranslationsInterface;
     }
     interface AuiIcon {
         /**
@@ -125,6 +137,7 @@ declare namespace LocalJSX {
         "index"?: number;
         "onCheckCategory"?: (event: AuiCookieCategoryCustomEvent<number>) => void;
         "onOpenCloseCategory"?: (event: AuiCookieCategoryCustomEvent<number>) => void;
+        "translations"?: TranslationsInterface;
     }
     interface AuiCookieConsent {
         /**
@@ -155,6 +168,10 @@ declare namespace LocalJSX {
           * Runs when new cookie preferences are saved
          */
         "preferencesSaved"?: Function;
+        /**
+          * Set the translation strings for the cookie consent
+         */
+        "translations"?: TranslationsInterface;
     }
     interface AuiCookieContentBlocker {
         /**
@@ -173,9 +190,14 @@ declare namespace LocalJSX {
           * The content blocker title
          */
         "message"?: string;
+        /**
+          * Set the translation strings for the content blocker
+         */
+        "translations"?: TranslationsInterface;
     }
     interface AuiCookieTable {
         "data"?: any[];
+        "translations"?: TranslationsInterface;
     }
     interface AuiIcon {
         /**

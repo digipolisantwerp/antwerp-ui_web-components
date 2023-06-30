@@ -3,8 +3,9 @@ import Cookies from 'js-cookie';
 import { createFocusTrap } from 'focus-trap';
 import classNames from 'classnames';
 
-import { ConfigInterface } from './cookie-consent.interface';
+import { ConfigInterface, TranslationsInterface } from './cookie-consent.interface';
 import { cookieConfig } from '../../services/default-cookie-config.js';
+import { cookieTranslations } from '../../services/default-cookie-translations.js';
 import { Environment } from '../../services/environment.js';
 
 @Component({
@@ -18,6 +19,8 @@ export class CookieConsent {
   @Prop() config: string;
   /** If set to true, the modal will show the cookie preferences and not the default screen with the title and description */
   @Prop() openPreferences: boolean;
+  /** Set the translation strings for the cookie consent */
+  @Prop() translations: TranslationsInterface;
   /** Set the current enovironment, this will impact the name of the cookie where the preferences will be saved. eg. 'acceptance' */
   @Prop() environment: string;
   /** Set the domain where you want your cookiepreferences to be saved. eg. 'antwerpen.be' */
@@ -28,6 +31,7 @@ export class CookieConsent {
   @Prop() preferencesSaved: Function;
 
   @State() configData: ConfigInterface;
+  @State() translationData: TranslationsInterface;
   @State() hidden: boolean = false;
   @State() showPreferences: boolean = false;
   @State() checkedCategories: any[];
@@ -38,6 +42,7 @@ export class CookieConsent {
   modalRef!: HTMLElement;
 
   componentWillLoad() {
+    this.handleTranslations(this.translations);
     this.loadConfig();
     this.checkEnvironment();
     this.checkCookie();
@@ -55,6 +60,11 @@ export class CookieConsent {
   parseMyObjectProp(newValue: string) {
     if (newValue) this.configData = JSON.parse(newValue);
     this.checkedCategories = this.configData.cookieConfig;
+  }
+
+  @Watch('translations')
+  translationsChanged(newValue: TranslationsInterface) {
+    this.handleTranslations(newValue);
   }
 
   @Watch('openPreferences')
@@ -107,6 +117,13 @@ export class CookieConsent {
     }
   }
 
+  handleTranslations(translations) {
+    this.translationData = {
+      ...cookieTranslations,
+      ...translations,
+    }
+  }
+
   checkEnvironment() {
     if (this.environment) {
       this.currentEnvironment = this.environment;
@@ -120,7 +137,6 @@ export class CookieConsent {
     if (Cookies.get('cookiepreferences_' + this.currentEnvironment)) {
       cookiePreferences = JSON.parse(Cookies.get('cookiepreferences_' + this.currentEnvironment));
     }
-
     this.checkedCategories.forEach(function (category) {
       // Make sure cookies from the same subdomain are left untouched
       const index = cookiePreferences.map(e => e.category).indexOf(category.name);
@@ -160,6 +176,13 @@ export class CookieConsent {
     this.hidden = hideWindow;
   }
 
+  checkCookiePolicy() {
+    var cookiePolicy = !!this.configData.cookiePolicy
+      ? (<p><a href={this.configData.cookiePolicy} class="has-icon-right" target="_blank">{this.translationData.textCookiePolicy}<aui-icon name="ai-navigation-next" /></a></p>)
+      : null;
+    return cookiePolicy;
+  }
+
   openCookiePreferences() {
     this.hidden = false;
     this.showPreferences = true;
@@ -168,6 +191,16 @@ export class CookieConsent {
   handleAcceptAll(e) {
     e.preventDefault()
     this.setCookie('all');
+    this.hidden = true;
+    this.openPreferences = false;
+  }
+
+  handleAcceptOnlyNecessary(e) {
+    e.preventDefault();
+    this.checkedCategories.forEach(function (category) {
+      category.enabled = !category.showSwitch;
+    });
+    this.setCookie();
     this.hidden = true;
     this.openPreferences = false;
   }
@@ -201,6 +234,7 @@ export class CookieConsent {
     return this.checkedCategories.map((category, key) =>
       <aui-cookie-category
         data={category}
+        translations={this.translationData}
         index={key}
       ></aui-cookie-category>
     )
@@ -214,9 +248,9 @@ export class CookieConsent {
           <p class="u-margin-bottom" innerHTML={this.configData.intro}></p>
         </div>
         <div class="m-modal__footer">
-          <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies aanvaarden</button>
-          <button class="a-button" onClick={() => this.savePreferences()}>Optionele cookies weigeren</button>
-          <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Voorkeuren instellen</button>
+          <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>{this.translationData.buttonAccept}</button>
+          <button class="a-button" onClick={(e) => this.handleAcceptOnlyNecessary(e)}>{this.translationData.buttonReject}</button>
+          <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>{this.translationData.buttonSetup}</button>
         </div>
       </div>
     )
@@ -226,18 +260,20 @@ export class CookieConsent {
     return (
       <div>
         <div class="m-modal__body">
-          <a role="button" href="#" class="has-icon-left" onClick={() => this.handleShowPreferences()}>
-            <aui-icon name="ai-arrow-left-1" />
-            Terug
-          </a>
-          <h1 class="h3 u-margin-top u-margin-bottom">Soorten cookies</h1>
+          <div class="m-modal__top-buttons">
+            <p>
+              <a role="button" href="#" class="has-icon-left" onClick={() => this.handleShowPreferences()}>
+                <aui-icon name="ai-arrow-left-1" />
+                {this.translationData.buttonBack}
+              </a>
+            </p>
+            {this.checkCookiePolicy()}
+          </div>
+          <h1 class="h3 u-margin-top u-margin-bottom">{this.translationData.textCookieTypes}</h1>
           {this.showCategories()}
         </div>
         <div class="m-modal__footer u-margin-top">
-          <button class="a-button" onClick={() => this.savePreferences()}>Voorkeuren opslaan</button>
-          {this.configData.nonBlocking && (
-            <button class="a-button a-button--transparent" onClick={() => this.handleHidePreferences()}>Annuleren</button>
-          )}
+          <button class="a-button" onClick={() => this.savePreferences()}>{this.translationData.buttonSaveSettings}</button>
         </div>
       </div>
     )
@@ -259,9 +295,9 @@ export class CookieConsent {
                 <p innerHTML={this.configData.intro}></p>
               </div>
               <div class="m-cookie-consent__buttons">
-                <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>Alle cookies aanvaarden</button>
-                <button class="a-button" onClick={() => this.savePreferences()}>Optionele cookies weigeren</button>
-                <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>Je voorkeuren instellen</button>
+                <button class="a-button" onClick={(e) => this.handleAcceptAll(e)}>{this.translationData.buttonAccept}</button>
+                <button class="a-button" onClick={(e) => this.handleAcceptOnlyNecessary(e)}>{this.translationData.buttonReject}</button>
+                <button class="a-button a-button--transparent" onClick={() => this.handleShowPreferences()}>{this.translationData.buttonSetup}</button>
               </div>
             </div>
           </div>
