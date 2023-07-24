@@ -4,7 +4,6 @@ import { createFocusTrap } from 'focus-trap';
 import classNames from 'classnames';
 
 import { ConfigInterface, TranslationsInterface } from './cookie-consent.interface';
-import { cookieConfig } from '../../services/default-cookie-config.js';
 import { cookieTranslations } from '../../services/default-cookie-translations.js';
 import { Environment } from '../../services/environment.js';
 
@@ -30,11 +29,11 @@ export class CookieConsent {
   /** Runs when new cookie preferences are saved */
   @Prop() preferencesSaved: Function;
 
-  @State() configData: ConfigInterface;
+  @State() configData: ConfigInterface = {};
   @State() translationData: TranslationsInterface;
   @State() hidden: boolean = false;
   @State() showPreferences: boolean = false;
-  @State() checkedCategories: any[];
+  @State() checkedCategories: any[] = [];
   @State() currentEnvironment: string;
   @State() openedManually: boolean = false;
 
@@ -111,9 +110,6 @@ export class CookieConsent {
   loadConfig() {
     if (this.config) {
       this.parseMyObjectProp(this.config);
-    } else {
-      this.configData = cookieConfig;
-      this.checkedCategories = this.configData.cookieConfig;
     }
   }
 
@@ -240,10 +236,17 @@ export class CookieConsent {
     )
   }
 
+  checkCookieConfig = () => {
+    return this.checkedCategories.length === 0
+      ? <div role="alertdialog" class="m-alert m-alert--danger m-alert--inline u-margin-bottom"><p>No cookie consent configuration found.</p></div>
+      : null;
+  }
+
   showCookieConsentDashboard = () => {
     return (
       <div>
         <div class="m-modal__body">
+          {this.checkCookieConfig()}
           <h1 class="h3 u-margin-bottom">{this.configData.title}</h1>
           <p class="u-margin-bottom" innerHTML={this.configData.intro}></p>
         </div>
@@ -260,6 +263,7 @@ export class CookieConsent {
     return (
       <div>
         <div class="m-modal__body">
+          {this.checkCookieConfig()}
           <div class="m-modal__top-buttons">
             <p>
               <a role="button" href="#" class="has-icon-left" onClick={() => this.handleShowPreferences()}>
